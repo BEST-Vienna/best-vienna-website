@@ -53,7 +53,7 @@
       .size([w, h])
       .words(words.map(d => ({ text: d.text, size: fontScale(d.weight) })))
       .padding(7)
-      .rotate(() => (Math.floor(Math.random() * 5) - 2) * 30)
+      .rotate(() => Math.random() < 0.7 ? 0 : 90)
       .font('Poppins')
       .fontWeight('700')
       .fontSize(d => d.size)
