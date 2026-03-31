@@ -1084,11 +1084,11 @@ p {
 }
 
 .wordcloud-menti {
-  background: var(--white);
-  border-radius: var(--radius);
-  border: 1px solid var(--gray-light);
-  box-shadow: var(--card-shadow);
-  overflow: hidden;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
   position: relative;
   height: 420px;
   display: flex;
@@ -1132,17 +1132,21 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
+  position: relative;
+  width: 660px;
+  height: 320px;
 }
 
 .bubble-dot {
   border-radius: 50%;
   background: var(--gray-light);
   flex-shrink: 0;
+  position: absolute;
 }
 
-.dot-sm { width: 14px; height: 14px; }
+.dot-sm  { width: 18px; height: 18px; }
+.dot-xs  { width: 10px; height: 10px; }
+.dot-md  { width: 32px; height: 32px; }
 
 .bubble {
   border-radius: 50%;
@@ -1152,62 +1156,63 @@ p {
   justify-content: center;
   text-align: center;
   flex-shrink: 0;
+  position: absolute;
 }
 
 .bubble-center {
-  width: 220px;
-  height: 220px;
+  width: 260px;
+  height: 260px;
   background: var(--navy);
-  box-shadow: 0 0 0 10px rgba(13,27,42,0.08), 0 0 0 20px rgba(13,27,42,0.04);
+  box-shadow: 0 0 0 12px rgba(0,55,81,0.09), 0 0 0 24px rgba(0,55,81,0.04);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 .bubble-center-title {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: rgba(255,255,255,0.7);
 }
 
 .bubble-center-bold {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: var(--white);
   letter-spacing: 0.04em;
 }
 
 .bubble-stat {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   background: var(--white);
   border: 2px solid var(--gray-light);
   box-shadow: var(--card-shadow);
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  z-index: 3;
 }
 
 .bubble-stat:hover {
-  transform: scale(1.06);
+  transform: translateX(var(--bx,0)) translateY(var(--by,0)) scale(1.06);
   border-color: var(--orange);
-  box-shadow: 0 8px 32px rgba(232,82,26,0.15);
+  box-shadow: 0 8px 32px rgba(219,94,38,0.18);
 }
 
-.bubble-top {
-  width: 120px;
-  height: 120px;
-  align-self: flex-start;
-  margin-top: 16px;
-}
+/* positioned stat bubbles — overlap the center bubble by ~30px */
+.bubble-left  { left:  10px; top: 50%; transform: translateY(-50%); --bx: 0; --by: -50%; }
+.bubble-right { right: 10px; top: 50%; transform: translateY(-50%); --bx: 0; --by: -50%; }
+.bubble-top-r { right: 120px; top: 20px; width: 130px; height: 130px; }
+.bubble-top-r .bubble-number { font-size: 1.5rem; }
 
 .bubble-number {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 800;
   color: var(--orange);
   line-height: 1;
-}
-
-.bubble-top .bubble-number {
-  font-size: 1.4rem;
 }
 
 .bubble-label {
@@ -1230,7 +1235,7 @@ p {
   position: absolute;
   inset: -8px;
   border-radius: 50%;
-  border: 2px solid rgba(232,82,26,0.25);
+  border: 2px solid rgba(219,94,38,0.22);
   animation: pulse-ring 2.4s ease-out infinite;
 }
 
