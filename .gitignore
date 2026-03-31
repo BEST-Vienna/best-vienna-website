@@ -1,3 +1,56 @@
 mockups/
 navbar-original.png
-*.DS_Store
+
+# ===== macOS =====
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# ===== IntelliJ / JetBrains IDEs =====
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.idea_modules/
+
+# ===== VS Code =====
+.vscode/
+*.code-workspace
+.history/
+
+# ===== Node / npm =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+package-lock.json
+yarn.lock
+
+# ===== Build / dist outputs =====
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# ===== Environment / secrets =====
+.env
+.env.*
+!.env.example
+
+# ===== Misc =====
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.log
+*.bak
+*.swp
+*.tmp
+*~
