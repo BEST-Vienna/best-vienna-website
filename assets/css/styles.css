@@ -1171,7 +1171,7 @@ p {
   width: 300px;
   height: 300px;
   background: var(--navy);
-  left: 310px;
+  left: 230px;   /* (760 - 300) / 2 = centered */
   top: 40px;
   z-index: 1;
   box-shadow: 0 0 0 14px rgba(0,55,81,0.07), 0 0 0 28px rgba(0,55,81,0.03);
@@ -1205,25 +1205,25 @@ p {
   z-index: 4;
 }
 
-/* 84 Local BEST Groups — large, left side, overlapping center */
+/* 84 Local BEST Groups — large, lower-left, slight overlap with center */
 .bubble-a {
   width: 200px;
   height: 200px;
-  left: 70px;
-  top: 90px;
+  left: 65px;
+  top: 155px;
 }
 /* 30 Countries — smaller, upper-left, overlapping a and center */
 .bubble-b {
   width: 130px;
   height: 130px;
-  left: 210px;
+  left: 130px;
   top: 18px;
 }
 /* 4000 Volunteers — medium, right side, overlapping center */
 .bubble-c {
   width: 170px;
   height: 170px;
-  left: 538px;
+  left: 458px;
   top: 75px;
 }
 
@@ -1540,12 +1540,12 @@ p {
     width: 580px;
     height: 290px;
   }
-  .bubble-center { width: 230px; height: 230px; left: 235px; top: 30px; }
+  .bubble-center { width: 230px; height: 230px; left: 175px; top: 30px; }
   .bubble-center-title { font-size: 1.1rem; }
   .bubble-center-bold  { font-size: 1.5rem; }
-  .bubble-a { width: 155px; height: 155px; left: 50px;  top: 68px; }
-  .bubble-b { width: 100px; height: 100px; left: 162px; top: 12px; }
-  .bubble-c { width: 130px; height: 130px; left: 414px; top: 58px; }
+  .bubble-a { width: 155px; height: 155px; left: 50px;  top: 118px; }
+  .bubble-b { width: 100px; height: 100px; left: 100px; top: 14px; }
+  .bubble-c { width: 130px; height: 130px; left: 350px; top: 57px; }
   .bubble-number { font-size: 1.45rem; }
   .bubble-b .bubble-number { font-size: 1.1rem; }
 
@@ -1558,12 +1558,12 @@ p {
 
 @media (max-width: 600px) {
   .bubble-wrap  { width: 380px; height: 210px; }
-  .bubble-center { width: 158px; height: 158px; left: 152px; top: 26px; }
+  .bubble-center { width: 158px; height: 158px; left: 111px; top: 20px; }
   .bubble-center-title { font-size: 0.8rem; }
   .bubble-center-bold  { font-size: 1.05rem; }
-  .bubble-a { width: 108px; height: 108px; left: 30px;  top: 51px; }
-  .bubble-b { width: 72px;  height: 72px;  left: 112px; top: 6px;  }
-  .bubble-c { width: 94px;  height: 94px;  left: 272px; top: 46px; }
+  .bubble-a { width: 108px; height: 108px; left: 30px;  top: 78px; }
+  .bubble-b { width: 72px;  height: 72px;  left: 65px;  top: 9px;  }
+  .bubble-c { width: 94px;  height: 94px;  left: 229px; top: 38px; }
   .bubble-number { font-size: 1rem; }
   .bubble-b .bubble-number { font-size: 0.85rem; }
   .bubble-label { font-size: 0.58rem; }
