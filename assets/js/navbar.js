@@ -13,6 +13,7 @@
         <a href="https://www.bestvienna.at/news" data-page="courses">COURSES</a>
         <a href="https://www.bestvienna.at/about" data-page="about">ABOUT US</a>
         <a href="board.html" data-page="board">BOARD</a>
+        <a href="faq.html" data-page="faq">FAQ</a>
         <a href="https://forms.gle/giR4ARjsJGW3wWr38" class="nav-apply-btn">APPLY!</a>
       </nav>
 
@@ -28,6 +29,7 @@
         <a href="https://www.bestvienna.at/news">COURSES</a>
         <a href="https://www.bestvienna.at/about">ABOUT US</a>
         <a href="board.html">BOARD</a>
+        <a href="faq.html">FAQ</a>
         <a href="https://forms.gle/giR4ARjsJGW3wWr38">APPLY!</a>
         <a href="#contact">CONTACT</a>
       </nav>
