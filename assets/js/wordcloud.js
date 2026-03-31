@@ -85,7 +85,13 @@
       setTimeout(init, 100);
       return;
     }
-    draw(svgEl);
+    // Wait for fonts to load so d3-cloud measures Poppins correctly
+    const run = function () { draw(svgEl); };
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(run);
+    } else {
+      run();
+    }
     // re-draw on resize for responsiveness
     let resizeTimer;
     window.addEventListener('resize', function () {

@@ -1129,19 +1129,20 @@ p {
 }
 
 .bubble-wrap {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  width: 660px;
-  height: 320px;
+  padding: 40px 20px;
 }
 
+/* tiny decorative dots are absolute within bubble-wrap */
 .bubble-dot {
   border-radius: 50%;
   background: var(--gray-light);
   flex-shrink: 0;
   position: absolute;
+  pointer-events: none;
 }
 
 .dot-sm  { width: 18px; height: 18px; }
@@ -1156,7 +1157,27 @@ p {
   justify-content: center;
   text-align: center;
   flex-shrink: 0;
-  position: absolute;
+  position: relative;
+  z-index: 2;
+}
+
+/* stat bubbles overlap the center bubble with negative margins */
+.bubble-stat {
+  width: 160px;
+  height: 160px;
+  background: var(--white);
+  border: 2px solid var(--gray-light);
+  box-shadow: var(--card-shadow);
+  margin: 0 -30px;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  z-index: 3;
+}
+
+.bubble-stat:hover {
+  transform: scale(1.06);
+  border-color: var(--orange);
+  box-shadow: 0 8px 32px rgba(219,94,38,0.18);
+  z-index: 5;
 }
 
 .bubble-center {
@@ -1164,10 +1185,8 @@ p {
   height: 260px;
   background: var(--navy);
   box-shadow: 0 0 0 12px rgba(0,55,81,0.09), 0 0 0 24px rgba(0,55,81,0.04);
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 4;
+  margin: 0;
 }
 
 .bubble-center-title {
@@ -1184,28 +1203,6 @@ p {
   color: var(--white);
   letter-spacing: 0.04em;
 }
-
-.bubble-stat {
-  width: 160px;
-  height: 160px;
-  background: var(--white);
-  border: 2px solid var(--gray-light);
-  box-shadow: var(--card-shadow);
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-  z-index: 3;
-}
-
-.bubble-stat:hover {
-  transform: translateX(var(--bx,0)) translateY(var(--by,0)) scale(1.06);
-  border-color: var(--orange);
-  box-shadow: 0 8px 32px rgba(219,94,38,0.18);
-}
-
-/* positioned stat bubbles — overlap the center bubble by ~30px */
-.bubble-left  { left:  10px; top: 50%; transform: translateY(-50%); --bx: 0; --by: -50%; }
-.bubble-right { right: 10px; top: 50%; transform: translateY(-50%); --bx: 0; --by: -50%; }
-.bubble-top-r { right: 120px; top: 20px; width: 130px; height: 130px; }
-.bubble-top-r .bubble-number { font-size: 1.5rem; }
 
 .bubble-number {
   font-family: 'Poppins', sans-serif;
@@ -1237,6 +1234,7 @@ p {
   border-radius: 50%;
   border: 2px solid rgba(219,94,38,0.22);
   animation: pulse-ring 2.4s ease-out infinite;
+  pointer-events: none;
 }
 
 @keyframes pulse-ring {
@@ -1524,19 +1522,20 @@ p {
   }
 
   .bubble-center {
-    width: 170px;
-    height: 170px;
+    width: 180px;
+    height: 180px;
   }
+
+  .bubble-center-title { font-size: 1rem; }
+  .bubble-center-bold  { font-size: 1.3rem; }
 
   .bubble-stat {
     width: 120px;
     height: 120px;
+    margin: 0 -20px;
   }
 
-  .bubble-top {
-    width: 95px;
-    height: 95px;
-  }
+  .bubble-number { font-size: 1.4rem; }
 
   .footer-cols {
     grid-template-columns: 1fr;

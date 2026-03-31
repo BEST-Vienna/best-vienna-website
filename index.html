@@ -123,36 +123,28 @@
       <div class="container numbers-inner">
         <div class="bubble-wrap">
 
-          <!-- tiny decorative bubbles -->
-          <div class="bubble-dot dot-md" style="left:30px; top:30px; background:var(--orange-light); opacity:0.35;"></div>
-          <div class="bubble-dot dot-xs" style="left:80px; top:10px; opacity:0.25;"></div>
-          <div class="bubble-dot dot-sm" style="left:0px; top:160px; background:var(--navy); opacity:0.18;"></div>
-          <div class="bubble-dot dot-xs" style="left:50px; bottom:20px; background:var(--orange); opacity:0.3;"></div>
-          <div class="bubble-dot dot-md" style="right:20px; top:20px; background:var(--navy); opacity:0.2;"></div>
-          <div class="bubble-dot dot-xs" style="right:70px; top:5px; opacity:0.2;"></div>
-          <div class="bubble-dot dot-sm" style="right:5px; bottom:40px; background:var(--orange-light); opacity:0.28;"></div>
-          <div class="bubble-dot dot-xs" style="right:60px; bottom:10px; opacity:0.22;"></div>
+          <!-- tiny decorative bubbles (absolute, can overlap anything) -->
+          <div class="bubble-dot dot-md" style="left:-10px; top:10px; background:var(--orange-light); opacity:0.35;"></div>
+          <div class="bubble-dot dot-xs" style="left:40px; top:-5px; opacity:0.25;"></div>
+          <div class="bubble-dot dot-sm" style="left:-20px; top:55%; background:var(--navy); opacity:0.18;"></div>
+          <div class="bubble-dot dot-xs" style="left:20px; bottom:-5px; background:var(--orange); opacity:0.3;"></div>
+          <div class="bubble-dot dot-md" style="right:-10px; top:5px; background:var(--navy); opacity:0.2;"></div>
+          <div class="bubble-dot dot-xs" style="right:40px; top:-8px; opacity:0.2;"></div>
+          <div class="bubble-dot dot-sm" style="right:-15px; bottom:15px; background:var(--orange-light); opacity:0.28;"></div>
+          <div class="bubble-dot dot-xs" style="right:30px; bottom:-5px; opacity:0.22;"></div>
 
-          <!-- stat bubble: left -->
-          <div class="bubble bubble-stat bubble-left bubble-pulse fade-up delay-1">
+          <!-- stat · center · stat — inline flex, negative margins create overlap -->
+          <div class="bubble bubble-stat bubble-pulse fade-up delay-1">
             <div class="bubble-number" data-target="84" data-suffix="">84</div>
             <div class="bubble-label">Local BEST<br>Groups</div>
           </div>
 
-          <!-- stat bubble: top-right (smaller) -->
-          <div class="bubble bubble-stat bubble-top-r fade-up delay-2">
-            <div class="bubble-number" data-target="30" data-suffix="">30</div>
-            <div class="bubble-label">Countries</div>
-          </div>
-
-          <!-- center title bubble -->
           <div class="bubble bubble-center fade-up">
             <div class="bubble-center-title">BEST in</div>
             <div class="bubble-center-bold">NUMBERS</div>
           </div>
 
-          <!-- stat bubble: right -->
-          <div class="bubble bubble-stat bubble-right bubble-pulse fade-up delay-3">
+          <div class="bubble bubble-stat bubble-pulse fade-up delay-2">
             <div class="bubble-number" data-target="3300" data-suffix="+">3300+</div>
             <div class="bubble-label">Members</div>
           </div>
