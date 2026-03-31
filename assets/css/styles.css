@@ -1075,40 +1075,41 @@ p {
   white-space: nowrap;
 }
 
-/* ---------- Wordcloud ---------- */
+/* ---------- Wordcloud (Mentimeter-style) ---------- */
 .wordcloud-section {
   background: var(--off-white);
 }
 
-.wordcloud {
+.wordcloud-menti {
   background: var(--white);
   border-radius: var(--radius);
   border: 1px solid var(--gray-light);
-  padding: 40px 48px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  position: relative;
+  height: 360px;
+}
+
+.wordcloud-menti canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.wordcloud-fallback {
+  position: absolute;
+  inset: 0;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 12px 20px;
-  min-height: 180px;
-  box-shadow: var(--card-shadow);
-}
-
-.wordcloud span {
+  padding: 24px;
   font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.2;
-  cursor: default;
-  transition: color var(--transition);
+  font-size: 0.9rem;
+  color: var(--gray);
+  text-align: center;
+  pointer-events: none;
+  opacity: 0; /* hidden once JS runs */
 }
-
-.wordcloud span:hover { color: var(--orange); }
-
-.wc-xl { font-size: 2.4rem; color: var(--orange); }
-.wc-lg { font-size: 1.5rem; }
-.wc-md { font-size: 1.1rem; color: var(--navy-mid); }
-.wc-sm { font-size: 0.85rem; color: var(--gray); font-weight: 600; }
 
 /* ---------- BEST in NUMBERS (bubbles) ---------- */
 .numbers-section {

@@ -91,32 +91,16 @@
       <span>WHO ARE WE?</span>
     </div>
 
-    <!-- ===== 4. Wordcloud ===== -->
+    <!-- ===== 4. Wordcloud (Mentimeter-style) ===== -->
     <section class="wordcloud-section section-pad-sm">
       <div class="container">
-        <div class="wordcloud fade-up">
-          <span class="wc-xl">BEST</span>
-          <span class="wc-lg">Vienna</span>
-          <span class="wc-md">Students</span>
-          <span class="wc-xl">Technology</span>
-          <span class="wc-sm">TU Wien</span>
-          <span class="wc-lg">Europe</span>
-          <span class="wc-md">Community</span>
-          <span class="wc-sm">Engineering</span>
-          <span class="wc-lg">Events</span>
-          <span class="wc-sm">Courses</span>
-          <span class="wc-md">Network</span>
-          <span class="wc-sm">Exchange</span>
-          <span class="wc-lg">International</span>
-          <span class="wc-sm">Career</span>
-          <span class="wc-md">Volunteer</span>
-          <span class="wc-sm">aRM</span>
-          <span class="wc-md">BSE</span>
-          <span class="wc-sm">beWANTED</span>
-          <span class="wc-lg">Non-profit</span>
-          <span class="wc-sm">1989</span>
-          <span class="wc-md">30 countries</span>
-          <span class="wc-sm">84 LBGs</span>
+        <div class="wordcloud-menti fade-up">
+          <canvas id="wordcloudCanvas"></canvas>
+          <div class="wordcloud-fallback" aria-hidden="true">
+            BEST · Vienna · Students · Technology · Europe · Community ·
+            Events · Courses · Network · International · Engineering · Exchange ·
+            TU Wien · Career · Volunteer · 30 Countries · 84 LBGs · Non-profit
+          </div>
         </div>
       </div>
     </section>
@@ -332,5 +316,6 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/wordcloud.js"></script>
 </body>
 </html>
