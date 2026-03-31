@@ -665,7 +665,13 @@ p {
   justify-content: center;
   flex-shrink: 0;
   color: var(--white);
-  font-size: 1.1rem;
+}
+
+.contact-link-item .icon .contact-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  display: block;
 }
 
 .contact-link-item .link-text {
