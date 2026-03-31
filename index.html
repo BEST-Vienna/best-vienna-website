@@ -145,13 +145,20 @@
             <div class="bubble-label">Volunteers</div>
           </div>
 
-          <!-- Tiny decorative dots (foreground, highest z-index) -->
-          <div class="bubble-dot dot-sm"  style="left:18px;  top:48%;"></div>
-          <div class="bubble-dot dot-xs"  style="left:52px;  bottom:28px;"></div>
-          <div class="bubble-dot dot-xs"  style="left:155px; bottom:12px;"></div>
-          <div class="bubble-dot dot-md"  style="left:48%;   bottom:8px; background:var(--gray-light);"></div>
-          <div class="bubble-dot dot-xs"  style="right:62px; top:22px;"></div>
-          <div class="bubble-dot dot-sm"  style="right:14px; bottom:55px; background:var(--orange-light); opacity:0.4;"></div>
+          <!-- Decorative dots (foreground z-index 5) — prominent, some overlapping bubbles -->
+          <!-- overlaps top-right edge of bubble-center -->
+          <div class="bubble-dot dot-lg"  style="left:510px; top:18px;  background:var(--navy); opacity:0.22;"></div>
+          <!-- overlaps bottom of bubble-center -->
+          <div class="bubble-dot dot-lg"  style="left:368px; top:318px; background:var(--gray-light); opacity:0.55;"></div>
+          <!-- overlaps bottom-left of bubble-a -->
+          <div class="bubble-dot dot-md"  style="left:48px;  top:328px; background:var(--orange); opacity:0.45;"></div>
+          <!-- overlaps top-right of bubble-b -->
+          <div class="bubble-dot dot-sm"  style="left:245px; top:6px;   background:var(--orange); opacity:0.6;"></div>
+          <!-- overlaps bottom-left of bubble-c -->
+          <div class="bubble-dot dot-md"  style="left:438px; top:218px; background:var(--orange-light); opacity:0.5;"></div>
+          <!-- isolated accent dots -->
+          <div class="bubble-dot dot-sm"  style="left:10px;  top:115px; background:var(--navy); opacity:0.3;"></div>
+          <div class="bubble-dot dot-xs"  style="right:72px; top:28px;  background:var(--orange); opacity:0.55;"></div>
 
         </div>
       </div>

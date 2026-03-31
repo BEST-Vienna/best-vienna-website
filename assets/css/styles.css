@@ -1151,9 +1151,10 @@ p {
   pointer-events: none;
   z-index: 5;
 }
-.dot-xs { width: 10px; height: 10px; }
-.dot-sm { width: 18px; height: 18px; }
-.dot-md { width: 30px; height: 30px; }
+.dot-xs { width: 12px; height: 12px; }
+.dot-sm { width: 24px; height: 24px; }
+.dot-md { width: 42px; height: 42px; }
+.dot-lg { width: 58px; height: 58px; }
 
 /* All bubbles share base styles */
 .bubble {
