@@ -120,34 +120,38 @@
 
     <!-- ===== 6. BEST in NUMBERS ===== -->
     <section class="numbers-section">
-      <div class="container numbers-inner">
+      <div class="numbers-inner">
         <div class="bubble-wrap">
 
-          <!-- tiny decorative bubbles (absolute, can overlap anything) -->
-          <div class="bubble-dot dot-md" style="left:-10px; top:10px; background:var(--orange-light); opacity:0.35;"></div>
-          <div class="bubble-dot dot-xs" style="left:40px; top:-5px; opacity:0.25;"></div>
-          <div class="bubble-dot dot-sm" style="left:-20px; top:55%; background:var(--navy); opacity:0.18;"></div>
-          <div class="bubble-dot dot-xs" style="left:20px; bottom:-5px; background:var(--orange); opacity:0.3;"></div>
-          <div class="bubble-dot dot-md" style="right:-10px; top:5px; background:var(--navy); opacity:0.2;"></div>
-          <div class="bubble-dot dot-xs" style="right:40px; top:-8px; opacity:0.2;"></div>
-          <div class="bubble-dot dot-sm" style="right:-15px; bottom:15px; background:var(--orange-light); opacity:0.28;"></div>
-          <div class="bubble-dot dot-xs" style="right:30px; bottom:-5px; opacity:0.22;"></div>
-
-          <!-- stat · center · stat — inline flex, negative margins create overlap -->
-          <div class="bubble bubble-stat bubble-pulse fade-up delay-1">
-            <div class="bubble-number" data-target="84" data-suffix="">84</div>
-            <div class="bubble-label">Local BEST<br>Groups</div>
-          </div>
-
-          <div class="bubble bubble-center fade-up">
+          <!-- Background title bubble (lowest z-index) -->
+          <div class="bubble bubble-center">
             <div class="bubble-center-title">BEST in</div>
             <div class="bubble-center-bold">NUMBERS</div>
           </div>
 
-          <div class="bubble bubble-stat bubble-pulse fade-up delay-2">
-            <div class="bubble-number" data-target="3300" data-suffix="+">3300+</div>
-            <div class="bubble-label">Members</div>
+          <!-- Stat bubbles (on top of background) -->
+          <div class="bubble bubble-stat bubble-a bubble-pulse fade-up delay-1">
+            <div class="bubble-number" data-target="84" data-suffix="">84</div>
+            <div class="bubble-label">Local BEST<br>Groups</div>
           </div>
+
+          <div class="bubble bubble-stat bubble-b fade-up delay-2">
+            <div class="bubble-number" data-target="30" data-suffix="">30</div>
+            <div class="bubble-label">Countries</div>
+          </div>
+
+          <div class="bubble bubble-stat bubble-c bubble-pulse fade-up delay-3">
+            <div class="bubble-number" data-target="4000" data-suffix="+">4000+</div>
+            <div class="bubble-label">Volunteers</div>
+          </div>
+
+          <!-- Tiny decorative dots (foreground, highest z-index) -->
+          <div class="bubble-dot dot-sm"  style="left:18px;  top:48%;"></div>
+          <div class="bubble-dot dot-xs"  style="left:52px;  bottom:28px;"></div>
+          <div class="bubble-dot dot-xs"  style="left:155px; bottom:12px;"></div>
+          <div class="bubble-dot dot-md"  style="left:48%;   bottom:8px; background:var(--gray-light);"></div>
+          <div class="bubble-dot dot-xs"  style="right:62px; top:22px;"></div>
+          <div class="bubble-dot dot-sm"  style="right:14px; bottom:55px; background:var(--orange-light); opacity:0.4;"></div>
 
         </div>
       </div>
