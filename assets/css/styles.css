@@ -32,6 +32,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   color: var(--text);
@@ -1508,6 +1512,20 @@ p {
   .footer-cols > div:first-child {
     grid-column: 1 / -1;
   }
+
+  /* Contact: stack to single column */
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .contact-right {
+    min-height: 300px;
+  }
+
+  .contact-right iframe {
+    min-height: 300px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1535,37 +1553,36 @@ p {
     margin: 0 auto;
   }
 
-  .bubble-wrap {
-    width: 580px;
-    height: 290px;
+  /* Contact links: single column so long URLs don't overflow */
+  .contact-links {
+    grid-template-columns: 1fr;
   }
-  .bubble-center { width: 230px; height: 230px; left: 175px; top: 30px; }
-  .bubble-center-title { font-size: 1.1rem; }
-  .bubble-center-bold  { font-size: 1.5rem; }
-  .bubble-a { width: 155px; height: 155px; left: 50px;  top: 118px; }
-  .bubble-b { width: 100px; height: 100px; left: 100px; top: 14px; }
-  .bubble-c { width: 130px; height: 130px; left: 350px; top: 57px; }
-  .bubble-number { font-size: 1.45rem; }
-  .bubble-b .bubble-number { font-size: 1.1rem; }
+
+  /* Clip wordcloud on mobile */
+  .wordcloud-menti {
+    overflow: hidden;
+  }
+
+  /* Bubble wrap: percentage-based so it never exceeds viewport */
+  .bubble-wrap {
+    width: 100%;
+    max-width: 100%;
+    height: 260px;
+  }
+  .bubble-center { width: 170px; height: 170px; left: calc(50% - 85px); top: 25px; }
+  .bubble-center-title { font-size: 0.95rem; }
+  .bubble-center-bold  { font-size: 1.25rem; }
+  .bubble-a { width: 125px; height: 125px; left: 5%; top: 95px; }
+  .bubble-b { width: 90px;  height: 90px;  left: calc(50% - 120px); top: 8px; }
+  .bubble-c { width: 110px; height: 110px; right: 5%; left: auto; top: 55px; }
+  .bubble-number { font-size: 1.2rem; }
+  .bubble-b .bubble-number { font-size: 0.95rem; }
 
   .footer-cols {
     grid-template-columns: 1fr;
     gap: 28px;
     padding: 40px 0 28px;
   }
-}
-
-@media (max-width: 600px) {
-  .bubble-wrap  { width: 380px; height: 210px; }
-  .bubble-center { width: 158px; height: 158px; left: 111px; top: 20px; }
-  .bubble-center-title { font-size: 0.8rem; }
-  .bubble-center-bold  { font-size: 1.05rem; }
-  .bubble-a { width: 108px; height: 108px; left: 30px;  top: 78px; }
-  .bubble-b { width: 72px;  height: 72px;  left: 65px;  top: 9px;  }
-  .bubble-c { width: 94px;  height: 94px;  left: 229px; top: 38px; }
-  .bubble-number { font-size: 1rem; }
-  .bubble-b .bubble-number { font-size: 0.85rem; }
-  .bubble-label { font-size: 0.58rem; }
 }
 
 /* ============================================
