@@ -3,7 +3,7 @@
   <footer class="site-footer">
     <div class="container footer-cols">
       <div class="footer-col">
-        <img src="assets/images/BESTViennaSVG.svg" alt="BEST Vienna" class="footer-logo" />
+        <img src="assets/images/best_logomark.png" alt="BEST Vienna" class="footer-logo" />
         <p class="footer-tagline">Board of European Students of Technology — Vienna Local Group since 1989.</p>
       </div>
       <div class="footer-col">

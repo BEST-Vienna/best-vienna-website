@@ -1424,11 +1424,9 @@ p {
 }
 
 .footer-logo {
-  width: 55px;
-  height: 78px;
-  transform: rotate(-90deg);
-  margin-bottom: 24px;
-  margin-top: -8px;
+  height: 48px;
+  width: auto;
+  margin-bottom: 16px;
 }
 
 .footer-tagline {
