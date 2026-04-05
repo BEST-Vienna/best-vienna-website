@@ -1277,6 +1277,13 @@ p {
   margin-bottom: 32px;
 }
 
+.events-grid--four {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .event-card {
   border-radius: var(--radius);
   overflow: hidden;
@@ -1296,14 +1303,28 @@ p {
 .event-card-inner {
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: linear-gradient(135deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.05) 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0) 100%);
   color: var(--white);
   text-align: center;
+  transition: background var(--transition);
+}
+
+.event-card-inner .event-text {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
+  transition: bottom var(--transition), transform var(--transition);
+}
+
+.event-card:hover .event-card-inner {
+  background: linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 100%);
+}
+
+.event-card:hover .event-card-inner .event-text {
+  bottom: 50%;
+  transform: translateY(50%);
 }
 
 .event-abbr {
@@ -1504,6 +1525,10 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .events-grid--four {
+    max-width: none;
+  }
+
   .footer-cols {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
@@ -1551,6 +1576,10 @@ p {
     grid-template-columns: 1fr;
     max-width: 340px;
     margin: 0 auto;
+  }
+
+  .events-grid--four {
+    max-width: 340px;
   }
 
   /* Contact links: single column so long URLs don't overflow */
