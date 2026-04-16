@@ -968,28 +968,15 @@ p {
 
 /* ---------- Hero / Video ---------- */
 .hero-video {
-  position: relative;
-  min-height: 520px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   overflow: hidden;
   background: var(--navy);
 }
 
 .hero-video-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('../images/vienna_header.jpg');
-  background-size: cover;
-  background-position: center 30%;
-  filter: brightness(0.45);
-}
-
-.hero-video-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(13,27,42,0.6) 0%, rgba(232,82,26,0.15) 100%);
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .hero-title-box {
