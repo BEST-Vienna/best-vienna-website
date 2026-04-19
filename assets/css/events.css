@@ -1,0 +1,567 @@
+/* ============================================
+   BEST Vienna — Events Page
+   ============================================ */
+
+/* ---- Hero ---- */
+.ev-hero {
+  position: relative;
+  min-height: 52vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.ev-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 60% 50%, rgba(219,94,38,0.18) 0%, transparent 70%),
+    linear-gradient(135deg, #001825 0%, #003751 60%, #012a40 100%);
+}
+
+.ev-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.ev-hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 100px 0 80px;
+  text-align: center;
+}
+
+.ev-hero-label {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 18px;
+}
+
+.ev-hero-title {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+
+.ev-hero-sub {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.04em;
+  margin: 0 auto 32px;
+  max-width: 500px;
+}
+
+.ev-hero-scroll {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  color: rgba(255,255,255,0.55);
+  transition: border-color 0.3s ease, color 0.3s ease;
+  animation: ev-bounce 2s ease-in-out infinite;
+}
+
+.ev-hero-scroll:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  animation: none;
+}
+
+@keyframes ev-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+/* ---- Selector Section ---- */
+.ev-selector {
+  background: #0a1a24;
+  padding: 44px 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Light variant (used on index page) */
+.ev-selector--light {
+  background: var(--white);
+}
+
+.ev-selector--light .ev-hint {
+  color: rgba(0,0,0,0.35);
+}
+
+.ev-selector--light .ev-dot {
+  background: rgba(0,0,0,0.15);
+}
+
+.ev-selector--light .ev-dot:hover {
+  background: rgba(0,0,0,0.35);
+}
+
+.ev-selector--light .ev-dot.active {
+  background: var(--orange);
+}
+
+.ev-hint {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+  margin-bottom: 28px;
+  transition: opacity 0.4s ease;
+}
+
+.ev-stage.has-active ~ .ev-dots ~ .ev-hint,
+.ev-hint.hidden { opacity: 0; pointer-events: none; }
+
+/* ---- Stage ---- */
+.ev-stage {
+  width: 92%;
+  max-width: 1380px;
+}
+
+/* ---- Featured Panel ---- */
+.ev-featured {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  max-height: 0;
+  opacity: 0;
+  margin-bottom: 0;
+  transition:
+    max-height 0.58s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity    0.45s ease,
+    margin-bottom 0.58s ease;
+}
+
+.ev-stage.has-active .ev-featured {
+  max-height: 480px;
+  opacity: 1;
+  margin-bottom: 10px;
+}
+
+.ev-feat-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--feat-ca, #003751) 0%, var(--feat-cb, #001825) 100%);
+  transition: background 0.5s ease;
+}
+
+.ev-feat-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.3) 55%,
+    rgba(0,0,0,0.05) 100%
+  );
+}
+
+/* Image panel (hidden by default, shown for events with a photo) */
+.ev-feat-image {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 44%;
+  z-index: 1;
+}
+
+.ev-feat-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* When an image is present: show it, shift text right, flip overlay */
+.ev-featured.has-image .ev-feat-image {
+  display: block;
+}
+
+.ev-featured.has-image .ev-feat-content {
+  padding-left: calc(44% + 52px);
+}
+
+.ev-featured.has-image .ev-feat-overlay {
+  background: linear-gradient(
+    to left,
+    rgba(0,0,0,0.78) 0%,
+    rgba(0,0,0,0.45) 50%,
+    rgba(0,0,0,0.05) 100%
+  );
+}
+
+/* Fade-in for image alongside text */
+.ev-feat-image {
+  opacity: 0;
+  transition: opacity 0.45s ease 0.2s;
+}
+
+.ev-stage.has-active .ev-feat-image {
+  opacity: 1;
+}
+
+.ev-feat-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  height: 460px;
+  padding: 0 52px;
+}
+
+.ev-feat-left {
+  max-width: 520px;
+}
+
+.ev-feat-tag {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 14px;
+}
+
+.ev-feat-title {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.ev-feat-desc {
+  font-size: 0.93rem;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.78;
+  margin-bottom: 22px;
+  max-width: 440px;
+}
+
+.ev-feat-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 28px;
+  list-style: none;
+}
+
+.ev-feat-facts li {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ev-feat-cta { display: inline-block; }
+
+/* Large decorative ghost text on the right */
+.ev-feat-deco {
+  position: absolute;
+  right: -2%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(8rem, 18vw, 20rem);
+  font-weight: 800;
+  color: rgba(255,255,255,0.05);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+/* Close button */
+.ev-feat-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 6;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.ev-feat-close:hover {
+  background: rgba(219,94,38,0.4);
+  border-color: var(--orange);
+  color: var(--white);
+  transform: rotate(90deg);
+}
+
+/* Content fade-in after panel opens */
+.ev-feat-left,
+.ev-feat-deco {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease 0.25s, transform 0.4s ease 0.25s;
+}
+
+.ev-stage.has-active .ev-feat-left,
+.ev-stage.has-active .ev-feat-deco {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Cards Grid ---- */
+.ev-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* ---- Single Card ---- */
+.ev-card {
+  position: relative;
+  height: 250px;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  /* background fallback — always shows the event color */
+  background: var(--cb, #1a2a35);
+  transition: box-shadow 0.3s ease, opacity 0.3s ease;
+  will-change: transform;
+}
+
+.ev-card:focus-visible {
+  box-shadow: 0 0 0 3px var(--orange), 0 0 0 5px rgba(219,94,38,0.3);
+}
+
+.ev-card:hover .ev-card-bg { transform: scale(1); }
+
+/* card background gradient */
+.ev-card-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, var(--ca, #db5e26) 0%, var(--cb, #003751) 100%);
+  transform: scale(1.04);
+  transition: transform 0.5s ease;
+}
+
+/* overlay */
+.ev-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%);
+  transition: background 0.35s ease;
+}
+
+.ev-card:hover .ev-card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.05) 55%, transparent 100%);
+}
+
+/* card text body */
+.ev-card-body {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 0 14px;
+  z-index: 2;
+}
+
+.ev-card-abbr {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-bottom: 5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+.ev-card-name {
+  font-size: clamp(0.62rem, 1vw, 0.78rem);
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.4;
+}
+
+/* card number badge */
+.ev-card-num {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.3);
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+/* ---- Active card (in strip mode) ---- */
+.ev-card.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--orange);
+  z-index: 3;
+  border-radius: 0 0 14px 14px;
+}
+
+.ev-card.active .ev-card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 60%);
+}
+
+/* ---- Strip mode (6 cols × 1 row) ---- */
+.ev-cards.strip-mode {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.ev-cards.strip-mode .ev-card {
+  height: 130px;
+  border-radius: 10px;
+}
+
+.ev-cards.strip-mode .ev-card-body {
+  bottom: 12px;
+}
+
+.ev-cards.strip-mode .ev-card-abbr {
+  font-size: clamp(0.75rem, 1.4vw, 1.1rem);
+}
+
+.ev-cards.strip-mode .ev-card-name {
+  display: none;
+}
+
+.ev-cards.strip-mode .ev-card-num {
+  opacity: 0;
+}
+
+/* Placeholder card styling */
+.ev-card--placeholder .ev-card-abbr {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  opacity: 0.55;
+}
+
+.ev-card--placeholder .ev-card-name { opacity: 0.6; }
+
+/* ---- Crossfade animation state ---- */
+.ev-stage.ev-fading .ev-feat-left,
+.ev-stage.ev-fading .ev-feat-deco,
+.ev-stage.ev-fading .ev-feat-image {
+  opacity: 0 !important;
+  transform: translateY(6px) !important;
+  transition-delay: 0s !important;
+}
+
+/* ---- Dots ---- */
+.ev-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.ev-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
+  padding: 0;
+}
+
+.ev-dot:hover { background: rgba(255,255,255,0.45); }
+
+.ev-dot.active {
+  background: var(--orange);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* ---- Responsive: tablet ---- */
+@media (max-width: 900px) {
+  .ev-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ev-cards.strip-mode {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 100px);
+  }
+
+  .ev-cards.strip-mode .ev-card {
+    height: 100px;
+  }
+
+  .ev-stage.has-active .ev-featured {
+    max-height: 560px;
+  }
+
+  .ev-feat-content {
+    height: auto;
+    padding: 36px 28px;
+    align-items: flex-start;
+  }
+
+  .ev-feat-deco { display: none; }
+}
+
+@media (max-width: 580px) {
+  .ev-stage { width: 96%; }
+
+  .ev-cards { grid-template-columns: repeat(2, 1fr); }
+
+  .ev-cards.strip-mode {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 84px);
+  }
+
+  .ev-cards.strip-mode .ev-card { height: 84px; }
+
+  .ev-feat-desc { display: none; }
+
+  .ev-feat-title { font-size: 1.6rem; }
+
+  .ev-dots { display: none; }
+}

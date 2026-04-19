@@ -10,7 +10,7 @@
         <h4 class="footer-col-title">Pages</h4>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="https://www.bestvienna.at/events">Events</a></li>
+          <li><a href="events.html">Events</a></li>
           <li><a href="https://www.bestvienna.at/news">Courses</a></li>
           <li><a href="https://www.bestvienna.at/about">About Us</a></li>
           <li><a href="board.html">Board</a></li>
