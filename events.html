@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="stylesheet" href="assets/css/events.css" />
   <link rel="icon" href="assets/images/best_logomark.png" type="image/png" />
 </head>
 <body>
@@ -41,118 +40,6 @@
       </div>
     </section>
 
-    <!-- ===== Selector ===== -->
-    <section class="ev-selector" id="selector">
-      <div class="ev-hint fade-up" aria-live="polite" id="evHint">— Select an event to explore —</div>
-
-      <div class="ev-stage" id="evStage">
-
-        <!-- Featured panel (expands on selection) -->
-        <div class="ev-featured" id="evFeatured" aria-label="Event detail" role="region">
-          <div class="ev-feat-bg" id="evFeatBg" aria-hidden="true"></div>
-          <div class="ev-feat-overlay" aria-hidden="true"></div>
-          <div class="ev-feat-content">
-            <div class="ev-feat-image" id="evFeatImage" aria-hidden="true">
-              <img id="evFeatImg" alt="" src="">
-            </div>
-            <div class="ev-feat-left">
-              <span class="ev-feat-tag" id="evFeatTag"></span>
-              <h2 class="ev-feat-title" id="evFeatTitle"></h2>
-              <p class="ev-feat-desc" id="evFeatDesc"></p>
-              <ul class="ev-feat-facts" id="evFeatFacts" aria-label="Key facts"></ul>
-              <a class="btn btn-primary ev-feat-cta" id="evFeatCta" href="#">—</a>
-            </div>
-          </div>
-          <div class="ev-feat-deco" id="evFeatDeco" aria-hidden="true"></div>
-          <button class="ev-feat-close" id="evFeatClose" aria-label="Close event detail">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          </button>
-        </div>
-
-        <!-- Cards grid (6 events) -->
-        <div class="ev-cards" id="evCards" role="list" aria-label="Events">
-
-          <!-- 01 · SC -->
-          <div class="ev-card" data-event="sc" style="--ca:#e8521a;--cb:#7a1e05" role="listitem" tabindex="0" aria-label="BEST Course in Summer">
-            <div class="ev-card-bg" aria-hidden="true"></div>
-            <div class="ev-card-overlay" aria-hidden="true"></div>
-            <div class="ev-card-body">
-              <div class="ev-card-abbr">SC</div>
-              <div class="ev-card-name">BEST Course<br>in Summer</div>
-            </div>
-            <div class="ev-card-num" aria-hidden="true">01</div>
-          </div>
-
-          <!-- 02 · aRM -->
-          <div class="ev-card" data-event="arm" style="--ca:#1e6aaa;--cb:#0b1e36" role="listitem" tabindex="0" aria-label="Autumn Regional Meeting">
-            <div class="ev-card-bg" aria-hidden="true"></div>
-            <div class="ev-card-overlay" aria-hidden="true"></div>
-            <div class="ev-card-body">
-              <div class="ev-card-abbr">aRM</div>
-              <div class="ev-card-name">Autumn Regional<br>Meeting</div>
-            </div>
-            <div class="ev-card-num" aria-hidden="true">02</div>
-          </div>
-
-          <!-- 03 · beWANTED -->
-          <div class="ev-card" data-event="bw" style="--ca:#0d8aaa;--cb:#044f65" role="listitem" tabindex="0" aria-label="beWANTED Career Event">
-            <div class="ev-card-bg" aria-hidden="true"></div>
-            <div class="ev-card-overlay" aria-hidden="true"></div>
-            <div class="ev-card-body">
-              <div class="ev-card-abbr">beWANTED</div>
-              <div class="ev-card-name">Career &amp;<br>Employer Event</div>
-            </div>
-            <div class="ev-card-num" aria-hidden="true">03</div>
-          </div>
-
-          <!-- 04 · MW -->
-          <div class="ev-card" data-event="mw" style="--ca:#7b52b8;--cb:#3d1f6a" role="listitem" tabindex="0" aria-label="Motivational Weekends">
-            <div class="ev-card-bg" aria-hidden="true"></div>
-            <div class="ev-card-overlay" aria-hidden="true"></div>
-            <div class="ev-card-body">
-              <div class="ev-card-abbr">MW</div>
-              <div class="ev-card-name">Motivational<br>Weekends</div>
-            </div>
-            <div class="ev-card-num" aria-hidden="true">04</div>
-          </div>
-
-          <!-- 05 · placeholder -->
-          <div class="ev-card ev-card--placeholder" data-event="ph1" style="--ca:#3a8a6a;--cb:#1a3a2a" role="listitem" tabindex="0" aria-label="Coming Soon">
-            <div class="ev-card-bg" aria-hidden="true"></div>
-            <div class="ev-card-overlay" aria-hidden="true"></div>
-            <div class="ev-card-body">
-              <div class="ev-card-abbr">?</div>
-              <div class="ev-card-name">Coming<br>Soon</div>
-            </div>
-            <div class="ev-card-num" aria-hidden="true">05</div>
-          </div>
-
-          <!-- 06 · placeholder -->
-          <div class="ev-card ev-card--placeholder" data-event="ph2" style="--ca:#9a6a2a;--cb:#3a2010" role="listitem" tabindex="0" aria-label="Coming Soon">
-            <div class="ev-card-bg" aria-hidden="true"></div>
-            <div class="ev-card-overlay" aria-hidden="true"></div>
-            <div class="ev-card-body">
-              <div class="ev-card-abbr">?</div>
-              <div class="ev-card-name">Coming<br>Soon</div>
-            </div>
-            <div class="ev-card-num" aria-hidden="true">06</div>
-          </div>
-
-        </div><!-- /ev-cards -->
-      </div><!-- /ev-stage -->
-
-      <!-- Dots indicator -->
-      <div class="ev-dots" id="evDots" role="tablist" aria-label="Event navigation">
-        <button class="ev-dot" data-target="sc"  role="tab" aria-label="BEST Course in Summer"></button>
-        <button class="ev-dot" data-target="arm" role="tab" aria-label="Autumn Regional Meeting"></button>
-        <button class="ev-dot" data-target="bw"  role="tab" aria-label="beWANTED"></button>
-        <button class="ev-dot" data-target="mw"  role="tab" aria-label="Motivational Weekends"></button>
-        <button class="ev-dot" data-target="ph1" role="tab" aria-label="Coming Soon"></button>
-        <button class="ev-dot" data-target="ph2" role="tab" aria-label="Coming Soon"></button>
-      </div>
-
-    </section><!-- /ev-selector -->
-
   </main>
 
   <!-- ===== Footer ===== -->
@@ -160,6 +47,5 @@
   <script src="assets/js/footer.js"></script>
 
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/events.js"></script>
 </body>
 </html>

@@ -97,6 +97,27 @@
   align-items: center;
 }
 
+/* Light variant (used on index page) */
+.ev-selector--light {
+  background: var(--white);
+}
+
+.ev-selector--light .ev-hint {
+  color: rgba(0,0,0,0.35);
+}
+
+.ev-selector--light .ev-dot {
+  background: rgba(0,0,0,0.15);
+}
+
+.ev-selector--light .ev-dot:hover {
+  background: rgba(0,0,0,0.35);
+}
+
+.ev-selector--light .ev-dot.active {
+  background: var(--orange);
+}
+
 .ev-hint {
   font-family: 'Poppins', sans-serif;
   font-size: 0.75rem;
