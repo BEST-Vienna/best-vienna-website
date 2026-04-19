@@ -156,7 +156,7 @@ p {
 
 /* ---------- Announcement Bar ---------- */
 .announcement-bar {
-  background: var(--orange);
+  background: var(--navy);
   color: var(--white);
   font-size: 0.82rem;
   font-weight: 500;
