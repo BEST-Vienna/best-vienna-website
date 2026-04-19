@@ -16,7 +16,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 60% at 60% 50%, rgba(219,94,38,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 60% at 60% 50%, rgba(108,1,21,0.18) 0%, transparent 70%),
     linear-gradient(135deg, #001825 0%, #003751 60%, #012a40 100%);
 }
 
@@ -322,7 +322,7 @@
 }
 
 .ev-feat-close:hover {
-  background: rgba(219,94,38,0.4);
+  background: rgba(108,1,21,0.4);
   border-color: var(--orange);
   color: var(--white);
   transform: rotate(90deg);
@@ -364,7 +364,7 @@
 }
 
 .ev-card:focus-visible {
-  box-shadow: 0 0 0 3px var(--orange), 0 0 0 5px rgba(219,94,38,0.3);
+  box-shadow: 0 0 0 3px var(--orange), 0 0 0 5px rgba(108,1,21,0.3);
 }
 
 .ev-card:hover .ev-card-bg { transform: scale(1); }
@@ -373,7 +373,7 @@
 .ev-card-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, var(--ca, #db5e26) 0%, var(--cb, #003751) 100%);
+  background: linear-gradient(160deg, var(--ca, #6c0115) 0%, var(--cb, #003751) 100%);
   transform: scale(1.04);
   transition: transform 0.5s ease;
 }
