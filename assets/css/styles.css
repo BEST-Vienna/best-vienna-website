@@ -124,8 +124,8 @@ p {
 }
 
 .btn-primary:hover {
-  background: var(--orange-dark);
-  border-color: var(--orange-dark);
+  background: var(--orange);
+  border-color: var(--orange);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(232, 82, 26, 0.3);
 }
@@ -253,7 +253,7 @@ p {
 .nav-apply-btn::before { display: none !important; }
 
 .nav-apply-btn:hover {
-  background: var(--orange-dark) !important;
+  background: var(--orange) !important;
   color: var(--white) !important;
   transform: translateY(-1px);
 }
@@ -847,7 +847,7 @@ p {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--orange), var(--orange-dark));
+  background: var(--orange);
   opacity: 0;
   transition: opacity var(--transition);
 }
@@ -1344,7 +1344,7 @@ p {
   transition: color var(--transition);
 }
 
-.show-more a:hover { color: var(--orange-dark); text-decoration: underline; }
+.show-more a:hover { color: var(--orange); text-decoration: underline; }
 
 /* ---------- CONTACT (new) ---------- */
 .contact-new {
@@ -1708,7 +1708,7 @@ p {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.faq-answer a:hover { color: var(--orange-dark); }
+.faq-answer a:hover { color: var(--orange); }
 
 /* CTA */
 .faq-cta {
@@ -1737,6 +1737,6 @@ p {
   transition: background var(--transition), transform var(--transition);
 }
 .btn-primary:hover {
-  background: var(--orange-dark);
+  background: var(--orange);
   transform: translateY(-2px);
 }
