@@ -62,6 +62,7 @@
       ],
       cta: { text: 'Join the Fun', href: 'mailto:vienna@best-eu.org' },
       colorA: '#7b52b8', colorB: '#3d1f6a',
+      image: 'assets/images/MotivationalWeekend.jpg',
     },
     ph1: {
       abbr: '?',
@@ -105,6 +106,8 @@
   const featCta   = document.getElementById('evFeatCta');
   const featDeco  = document.getElementById('evFeatDeco');
   const featClose = document.getElementById('evFeatClose');
+  const featImage = document.getElementById('evFeatImage');
+  const featImg   = document.getElementById('evFeatImg');
   const hint      = document.getElementById('evHint');
   const dots      = document.querySelectorAll('.ev-dot');
   const cards     = () => [...document.querySelectorAll('.ev-card')];
@@ -131,6 +134,18 @@
     featFacts.innerHTML = ev.facts
       .map(f => `<li><span aria-hidden="true">${f.icon}</span>${f.text}</li>`)
       .join('');
+
+    // Image support: show photo on left, push text right
+    const featured = document.getElementById('evFeatured');
+    if (ev.image) {
+      featImg.src = ev.image;
+      featImg.alt = ev.name;
+      featured.classList.add('has-image');
+    } else {
+      featImg.src = '';
+      featImg.alt = '';
+      featured.classList.remove('has-image');
+    }
   }
 
   /* ---------- Sync dots ---------- */

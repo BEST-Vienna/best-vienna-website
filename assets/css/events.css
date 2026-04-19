@@ -156,6 +156,53 @@
   );
 }
 
+/* Image panel (hidden by default, shown for events with a photo) */
+.ev-feat-image {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 44%;
+  z-index: 1;
+}
+
+.ev-feat-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* When an image is present: show it, shift text right, flip overlay */
+.ev-featured.has-image .ev-feat-image {
+  display: block;
+}
+
+.ev-featured.has-image .ev-feat-content {
+  padding-left: calc(44% + 52px);
+}
+
+.ev-featured.has-image .ev-feat-overlay {
+  background: linear-gradient(
+    to left,
+    rgba(0,0,0,0.78) 0%,
+    rgba(0,0,0,0.45) 50%,
+    rgba(0,0,0,0.05) 100%
+  );
+}
+
+/* Fade-in for image alongside text */
+.ev-feat-image {
+  opacity: 0;
+  transition: opacity 0.45s ease 0.2s;
+}
+
+.ev-stage.has-active .ev-feat-image {
+  opacity: 1;
+}
+
 .ev-feat-content {
   position: relative;
   z-index: 2;
@@ -418,7 +465,8 @@
 
 /* ---- Crossfade animation state ---- */
 .ev-stage.ev-fading .ev-feat-left,
-.ev-stage.ev-fading .ev-feat-deco {
+.ev-stage.ev-fading .ev-feat-deco,
+.ev-stage.ev-fading .ev-feat-image {
   opacity: 0 !important;
   transform: translateY(6px) !important;
   transition-delay: 0s !important;
