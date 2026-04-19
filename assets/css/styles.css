@@ -10,11 +10,11 @@
 }
 
 :root {
-  --navy:        #d9bca3;
-  --navy-mid:    #c4a48a;
-  --orange:      #6c0115;
-  --orange-dark: #4d000f;
-  --orange-light: #a01a35;
+  --navy:        #003751;
+  --navy-mid:    #515e66;
+  --orange:      #db5e26;
+  --orange-dark: #b84e1f;
+  --orange-light: #ed925f;
   --white:       #ffffff;
   --off-white:   #f5f5f5;
   --gray-light:  #e4e8ea;
@@ -124,8 +124,8 @@ p {
 }
 
 .btn-primary:hover {
-  background: var(--orange);
-  border-color: var(--orange);
+  background: var(--orange-dark);
+  border-color: var(--orange-dark);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(232, 82, 26, 0.3);
 }
@@ -253,7 +253,7 @@ p {
 .nav-apply-btn::before { display: none !important; }
 
 .nav-apply-btn:hover {
-  background: var(--orange) !important;
+  background: var(--orange-dark) !important;
   color: var(--white) !important;
   transform: translateY(-1px);
 }
@@ -847,7 +847,7 @@ p {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
-  background: var(--orange);
+  background: linear-gradient(90deg, var(--orange), var(--orange-dark));
   opacity: 0;
   transition: opacity var(--transition);
 }
@@ -1191,7 +1191,7 @@ p {
 .bubble-stat:hover {
   transform: scale(1.07);
   border-color: var(--orange);
-  box-shadow: 0 10px 36px rgba(108,1,21,0.2);
+  box-shadow: 0 10px 36px rgba(219,94,38,0.2);
   z-index: 4;
 }
 
@@ -1242,7 +1242,7 @@ p {
   position: absolute;
   inset: -10px;
   border-radius: 50%;
-  border: 2px solid rgba(108,1,21,0.2);
+  border: 2px solid rgba(219,94,38,0.2);
   animation: pulse-ring 2.6s ease-out infinite;
   pointer-events: none;
 }
@@ -1344,7 +1344,7 @@ p {
   transition: color var(--transition);
 }
 
-.show-more a:hover { color: var(--orange); text-decoration: underline; }
+.show-more a:hover { color: var(--orange-dark); text-decoration: underline; }
 
 /* ---------- CONTACT (new) ---------- */
 .contact-new {
@@ -1708,7 +1708,7 @@ p {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.faq-answer a:hover { color: var(--orange); }
+.faq-answer a:hover { color: var(--orange-dark); }
 
 /* CTA */
 .faq-cta {
@@ -1737,6 +1737,6 @@ p {
   transition: background var(--transition), transform var(--transition);
 }
 .btn-primary:hover {
-  background: var(--orange);
+  background: var(--orange-dark);
   transform: translateY(-2px);
 }
