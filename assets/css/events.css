@@ -123,6 +123,12 @@
   position: relative;
 }
 
+/* ---- Per-event accent colors (used for bg gradient fallback + detail tag) ---- */
+[data-event="sc"]  { --ev-color-a: #e8521a; --ev-color-b: #8a2e0a; }
+[data-event="arm"] { --ev-color-a: #1e6a9f; --ev-color-b: #0b1e36; }
+[data-event="bw"]  { --ev-color-a: #0d8aaa; --ev-color-b: #044f65; }
+[data-event="mw"]  { --ev-color-a: #7b52b8; --ev-color-b: #3d1f6a; }
+
 /* ---- Panel ---- */
 .ev-panel {
   position: relative;
@@ -138,16 +144,21 @@
   outline: none;
   user-select: none;
   min-width: 0;
+  /* always-visible color fallback */
+  background: var(--ev-color-b, #1a2a35);
 }
 
 .ev-panel:focus-visible {
   box-shadow: 0 0 0 3px var(--orange), 0 0 0 5px rgba(219,94,38,0.3);
 }
 
-/* bg image */
+/* bg: rich gradient always visible; real image layered on top when it loads */
 .ev-panel-bg {
   position: absolute;
   inset: 0;
+  background:
+    var(--ev-bg-image, none),
+    linear-gradient(160deg, var(--ev-color-a, #db5e26) 0%, var(--ev-color-b, #003751) 100%);
   background-size: cover;
   background-position: center;
   transform: scale(1.04);
@@ -159,15 +170,15 @@
   transform: scale(1);
 }
 
-/* dark gradient overlay */
+/* dark gradient overlay — lighter so color & idle text shine through */
 .ev-panel-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.88) 0%,
-    rgba(0, 0, 0, 0.40) 40%,
-    rgba(0, 0, 0, 0.15) 100%
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.22) 45%,
+    rgba(0, 0, 0, 0.05) 100%
   );
   transition: background 0.45s ease;
 }
@@ -175,9 +186,9 @@
 .ev-panel.active .ev-panel-overlay {
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.90) 0%,
-    rgba(0, 0, 0, 0.60) 50%,
-    rgba(0, 0, 0, 0.20) 100%
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.50) 55%,
+    rgba(0, 0, 0, 0.12) 100%
   );
 }
 
