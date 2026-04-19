@@ -33,7 +33,7 @@ html {
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -41,7 +41,7 @@ body {
   color: var(--text);
   background: var(--white);
   line-height: 1.7;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img {
