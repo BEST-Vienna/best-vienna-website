@@ -8,7 +8,7 @@
 
       <nav class="nav-links" aria-label="Main navigation">
         <a href="index.html" data-page="index">HOME</a>
-        <a href="https://www.bestvienna.at/events" data-page="events">EVENTS</a>
+        <a href="events.html" data-page="events">EVENTS</a>
         <a href="https://www.bestvienna.at/news" data-page="courses">COURSES</a>
         <a href="https://www.bestvienna.at/about" data-page="about">ABOUT US</a>
         <a href="board.html" data-page="board">BOARD</a>
@@ -24,7 +24,7 @@
     <div class="container">
       <nav class="mobile-nav" aria-label="Mobile navigation">
         <a href="index.html">HOME</a>
-        <a href="https://www.bestvienna.at/events">EVENTS</a>
+        <a href="events.html">EVENTS</a>
         <a href="https://www.bestvienna.at/news">COURSES</a>
         <a href="https://www.bestvienna.at/about">ABOUT US</a>
         <a href="board.html">BOARD</a>
