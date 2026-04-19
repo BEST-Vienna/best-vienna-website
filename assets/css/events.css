@@ -1,5 +1,5 @@
 /* ============================================
-   BEST Vienna — Events Page (Character-Select)
+   BEST Vienna — Events Page
    ============================================ */
 
 /* ---- Hero ---- */
@@ -17,11 +17,9 @@
   inset: 0;
   background:
     radial-gradient(ellipse 70% 60% at 60% 50%, rgba(219,94,38,0.18) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 80% at 20% 80%, rgba(0,55,81,0.6) 0%, transparent 60%),
     linear-gradient(135deg, #001825 0%, #003751 60%, #012a40 100%);
 }
 
-/* subtle grid texture */
 .ev-hero-bg::after {
   content: '';
   position: absolute;
@@ -55,17 +53,15 @@
   font-weight: 800;
   color: var(--white);
   line-height: 1.05;
-  letter-spacing: -0.01em;
   margin-bottom: 18px;
 }
 
 .ev-hero-sub {
   font-size: clamp(1rem, 2vw, 1.2rem);
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255,255,255,0.55);
   letter-spacing: 0.04em;
-  margin: 0;
-  max-width: 500px;
   margin: 0 auto 32px;
+  max-width: 500px;
 }
 
 .ev-hero-scroll {
@@ -74,21 +70,20 @@
   justify-content: center;
   width: 46px;
   height: 46px;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255,255,255,0.25);
   border-radius: 50%;
-  color: rgba(255, 255, 255, 0.55);
-  transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  animation: bounce-down 2s ease-in-out infinite;
+  color: rgba(255,255,255,0.55);
+  transition: border-color 0.3s ease, color 0.3s ease;
+  animation: ev-bounce 2s ease-in-out infinite;
 }
 
 .ev-hero-scroll:hover {
   border-color: var(--orange);
   color: var(--orange);
   animation: none;
-  transform: translateY(4px);
 }
 
-@keyframes bounce-down {
+@keyframes ev-bounce {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(8px); }
 }
@@ -96,381 +91,408 @@
 /* ---- Selector Section ---- */
 .ev-selector {
   background: #0a1a24;
-  padding: 48px 0 64px;
-  min-height: 100vh;
+  padding: 44px 0 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.ev-selector-hint {
+.ev-hint {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
-  margin-bottom: 32px;
+  color: rgba(255,255,255,0.28);
+  margin-bottom: 28px;
+  transition: opacity 0.4s ease;
 }
 
-/* ---- Arena ---- */
-.ev-arena {
-  display: flex;
-  width: 94%;
-  max-width: 1400px;
-  height: clamp(520px, 72vh, 760px);
-  gap: 6px;
-  position: relative;
+.ev-stage.has-active ~ .ev-dots ~ .ev-hint,
+.ev-hint.hidden { opacity: 0; pointer-events: none; }
+
+/* ---- Stage ---- */
+.ev-stage {
+  width: 92%;
+  max-width: 1380px;
 }
 
-/* ---- Per-event accent colors (used for bg gradient fallback + detail tag) ---- */
-[data-event="sc"]  { --ev-color-a: #e8521a; --ev-color-b: #8a2e0a; }
-[data-event="arm"] { --ev-color-a: #1e6a9f; --ev-color-b: #0b1e36; }
-[data-event="bw"]  { --ev-color-a: #0d8aaa; --ev-color-b: #044f65; }
-[data-event="mw"]  { --ev-color-a: #7b52b8; --ev-color-b: #3d1f6a; }
-
-/* ---- Panel ---- */
-.ev-panel {
+/* ---- Featured Panel ---- */
+.ev-featured {
   position: relative;
-  flex: 1;
-  border-radius: 16px;
+  width: 100%;
   overflow: hidden;
-  cursor: pointer;
+  border-radius: 18px;
+  max-height: 0;
+  opacity: 0;
+  margin-bottom: 0;
   transition:
-    flex 0.65s cubic-bezier(0.4, 0, 0.2, 1),
-    filter 0.45s ease,
-    opacity 0.45s ease,
-    box-shadow 0.45s ease;
-  outline: none;
-  user-select: none;
-  min-width: 0;
-  /* always-visible color fallback */
-  background: var(--ev-color-b, #1a2a35);
+    max-height 0.58s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity    0.45s ease,
+    margin-bottom 0.58s ease;
 }
 
-.ev-panel:focus-visible {
-  box-shadow: 0 0 0 3px var(--orange), 0 0 0 5px rgba(219,94,38,0.3);
+.ev-stage.has-active .ev-featured {
+  max-height: 480px;
+  opacity: 1;
+  margin-bottom: 10px;
 }
 
-/* bg: rich gradient always visible; real image layered on top when it loads */
-.ev-panel-bg {
+.ev-feat-bg {
   position: absolute;
   inset: 0;
-  background:
-    var(--ev-bg-image, none),
-    linear-gradient(160deg, var(--ev-color-a, #db5e26) 0%, var(--ev-color-b, #003751) 100%);
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.04);
-  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, var(--feat-ca, #003751) 0%, var(--feat-cb, #001825) 100%);
+  transition: background 0.5s ease;
 }
 
-.ev-panel:hover .ev-panel-bg,
-.ev-panel.active .ev-panel-bg {
-  transform: scale(1);
-}
-
-/* dark gradient overlay — lighter so color & idle text shine through */
-.ev-panel-overlay {
+.ev-feat-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.72) 0%,
-    rgba(0, 0, 0, 0.22) 45%,
-    rgba(0, 0, 0, 0.05) 100%
-  );
-  transition: background 0.45s ease;
-}
-
-.ev-panel.active .ev-panel-overlay {
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.82) 0%,
-    rgba(0, 0, 0, 0.50) 55%,
-    rgba(0, 0, 0, 0.12) 100%
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.3) 55%,
+    rgba(0,0,0,0.05) 100%
   );
 }
 
-/* ---- Idle state (abbr + name) ---- */
-.ev-panel-idle {
-  position: absolute;
-  bottom: 28px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  padding: 0 16px;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 3;
-}
-
-.ev-arena.has-active .ev-panel.active .ev-panel-idle {
-  opacity: 0;
-  transform: translateY(12px);
-  pointer-events: none;
-}
-
-.ev-panel-abbr {
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(1.4rem, 2.8vw, 2.4rem);
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: 0.06em;
-  line-height: 1;
-  margin-bottom: 6px;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
-}
-
-.ev-panel-name {
-  font-size: clamp(0.65rem, 1.1vw, 0.82rem);
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.04em;
-  line-height: 1.4;
-}
-
-/* ---- Detail state ---- */
-.ev-panel-detail {
-  position: absolute;
-  inset: 0;
-  z-index: 4;
+.ev-feat-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease 0.1s;
+  height: 460px;
+  padding: 0 52px;
 }
 
-.ev-panel.active .ev-panel-detail {
-  opacity: 1;
-  pointer-events: auto;
+.ev-feat-left {
+  max-width: 520px;
 }
 
-.ev-detail-inner {
-  padding: 40px 44px;
-  max-width: 480px;
-}
-
-.ev-detail-tag {
+.ev-feat-tag {
+  display: inline-block;
   font-family: 'Poppins', sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--orange);
   margin-bottom: 14px;
 }
 
-.ev-detail-title {
-  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+.ev-feat-title {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
   font-weight: 800;
   color: var(--white);
   line-height: 1.1;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
-.ev-detail-desc {
+.ev-feat-desc {
   font-size: 0.93rem;
-  color: rgba(255, 255, 255, 0.72);
-  line-height: 1.75;
-  margin-bottom: 24px;
-  max-width: 380px;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.78;
+  margin-bottom: 22px;
+  max-width: 440px;
 }
 
-.ev-detail-facts {
+.ev-feat-facts {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 28px;
   list-style: none;
 }
 
-.ev-detail-facts li {
+.ev-feat-facts li {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.86rem;
-  color: rgba(255, 255, 255, 0.65);
-  font-weight: 500;
+  gap: 7px;
 }
 
-.ev-fact-icon {
-  font-size: 1rem;
-  flex-shrink: 0;
+.ev-feat-cta { display: inline-block; }
+
+/* Large decorative ghost text on the right */
+.ev-feat-deco {
+  position: absolute;
+  right: -2%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(8rem, 18vw, 20rem);
+  font-weight: 800;
+  color: rgba(255,255,255,0.05);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 1;
+  transition: color 0.4s ease;
 }
 
-.ev-detail-cta {
-  display: inline-block;
-}
-
-/* ---- Dimmed non-active panels ---- */
-.ev-arena.has-active .ev-panel:not(.active) {
-  flex: 0.32;
-  filter: brightness(0.4) saturate(0.5);
-}
-
-.ev-arena.has-active .ev-panel:not(.active):hover {
-  filter: brightness(0.65) saturate(0.75);
-}
-
-/* ---- Panel number ---- */
-.ev-panel-num {
+/* Close button */
+.ev-feat-close {
   position: absolute;
   top: 18px;
   right: 18px;
+  z-index: 6;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.ev-feat-close:hover {
+  background: rgba(219,94,38,0.4);
+  border-color: var(--orange);
+  color: var(--white);
+  transform: rotate(90deg);
+}
+
+/* Content fade-in after panel opens */
+.ev-feat-left,
+.ev-feat-deco {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease 0.25s, transform 0.4s ease 0.25s;
+}
+
+.ev-stage.has-active .ev-feat-left,
+.ev-stage.has-active .ev-feat-deco {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Cards Grid ---- */
+.ev-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* ---- Single Card ---- */
+.ev-card {
+  position: relative;
+  height: 250px;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  /* background fallback — always shows the event color */
+  background: var(--cb, #1a2a35);
+  transition: box-shadow 0.3s ease, opacity 0.3s ease;
+  will-change: transform;
+}
+
+.ev-card:focus-visible {
+  box-shadow: 0 0 0 3px var(--orange), 0 0 0 5px rgba(219,94,38,0.3);
+}
+
+.ev-card:hover .ev-card-bg { transform: scale(1); }
+
+/* card background gradient */
+.ev-card-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, var(--ca, #db5e26) 0%, var(--cb, #003751) 100%);
+  transform: scale(1.04);
+  transition: transform 0.5s ease;
+}
+
+/* overlay */
+.ev-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%);
+  transition: background 0.35s ease;
+}
+
+.ev-card:hover .ev-card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.05) 55%, transparent 100%);
+}
+
+/* card text body */
+.ev-card-body {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 0 14px;
+  z-index: 2;
+}
+
+.ev-card-abbr {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.68rem;
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-bottom: 5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+.ev-card-name {
+  font-size: clamp(0.62rem, 1vw, 0.78rem);
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.4;
+}
+
+/* card number badge */
+.ev-card-num {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.35);
-  z-index: 3;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.3);
+  z-index: 2;
   transition: opacity 0.3s ease;
 }
 
-.ev-arena.has-active .ev-panel.active .ev-panel-num {
+/* ---- Active card (in strip mode) ---- */
+.ev-card.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--orange);
+  z-index: 3;
+  border-radius: 0 0 14px 14px;
+}
+
+.ev-card.active .ev-card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 60%);
+}
+
+/* ---- Strip mode (6 cols × 1 row) ---- */
+.ev-cards.strip-mode {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.ev-cards.strip-mode .ev-card {
+  height: 130px;
+  border-radius: 10px;
+}
+
+.ev-cards.strip-mode .ev-card-body {
+  bottom: 12px;
+}
+
+.ev-cards.strip-mode .ev-card-abbr {
+  font-size: clamp(0.75rem, 1.4vw, 1.1rem);
+}
+
+.ev-cards.strip-mode .ev-card-name {
+  display: none;
+}
+
+.ev-cards.strip-mode .ev-card-num {
   opacity: 0;
 }
 
-/* ---- Active glow border ---- */
-.ev-panel::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  border: 2px solid transparent;
-  transition: border-color 0.4s ease;
-  z-index: 5;
-  pointer-events: none;
+/* Placeholder card styling */
+.ev-card--placeholder .ev-card-abbr {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  opacity: 0.55;
 }
 
-.ev-panel.active::after {
-  border-color: rgba(219, 94, 38, 0.6);
-  box-shadow: inset 0 0 24px rgba(219,94,38,0.1);
+.ev-card--placeholder .ev-card-name { opacity: 0.6; }
+
+/* ---- Crossfade animation state ---- */
+.ev-stage.ev-fading .ev-feat-left,
+.ev-stage.ev-fading .ev-feat-deco {
+  opacity: 0 !important;
+  transform: translateY(6px) !important;
+  transition-delay: 0s !important;
 }
 
-/* ---- Indicator dots ---- */
+/* ---- Dots ---- */
 .ev-dots {
   display: flex;
-  gap: 10px;
-  margin-top: 28px;
+  gap: 8px;
+  margin-top: 20px;
 }
 
 .ev-dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255,255,255,0.18);
   border: none;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease, width 0.3s ease;
+  transition: background 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
   padding: 0;
 }
 
-.ev-dot:hover {
-  background: rgba(255, 255, 255, 0.5);
-}
+.ev-dot:hover { background: rgba(255,255,255,0.45); }
 
 .ev-dot.active {
   background: var(--orange);
-  width: 28px;
-  border-radius: 5px;
+  width: 24px;
+  border-radius: 4px;
 }
 
 /* ---- Responsive: tablet ---- */
 @media (max-width: 900px) {
-  .ev-arena {
-    flex-direction: column;
+  .ev-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ev-cards.strip-mode {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 100px);
+  }
+
+  .ev-cards.strip-mode .ev-card {
+    height: 100px;
+  }
+
+  .ev-stage.has-active .ev-featured {
+    max-height: 560px;
+  }
+
+  .ev-feat-content {
     height: auto;
-    gap: 4px;
+    padding: 36px 28px;
+    align-items: flex-start;
   }
 
-  .ev-panel {
-    flex: none !important;
-    height: 90px;
-    filter: none !important;
-    transition:
-      height 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-      filter 0.35s ease;
-  }
-
-  .ev-panel.active {
-    height: 540px;
-  }
-
-  .ev-arena.has-active .ev-panel:not(.active) {
-    height: 72px;
-    filter: brightness(0.5) saturate(0.5) !important;
-  }
-
-  .ev-panel-idle {
-    bottom: auto;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: left;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .ev-panel-idle .ev-panel-abbr {
-    font-size: 1.4rem;
-    margin-bottom: 0;
-  }
-
-  .ev-panel-idle .ev-panel-name {
-    display: none;
-  }
-
-  .ev-arena.has-active .ev-panel.active .ev-panel-idle {
-    transform: translateY(-50%);
-  }
-
-  .ev-panel-overlay {
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.75) 0%,
-      rgba(0, 0, 0, 0.30) 60%,
-      rgba(0, 0, 0, 0.10) 100%
-    ) !important;
-  }
-
-  .ev-detail-inner {
-    padding: 28px 28px 28px 28px;
-  }
-
-  .ev-detail-title {
-    font-size: 1.6rem;
-  }
-
-  .ev-detail-desc {
-    font-size: 0.87rem;
-  }
-
-  .ev-dots {
-    display: none;
-  }
+  .ev-feat-deco { display: none; }
 }
 
-@media (max-width: 480px) {
-  .ev-arena {
-    width: 100%;
-    border-radius: 0;
+@media (max-width: 580px) {
+  .ev-stage { width: 96%; }
+
+  .ev-cards { grid-template-columns: repeat(2, 1fr); }
+
+  .ev-cards.strip-mode {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 84px);
   }
 
-  .ev-panel {
-    border-radius: 0;
-  }
+  .ev-cards.strip-mode .ev-card { height: 84px; }
 
-  .ev-panel::after {
-    border-radius: 0;
-  }
+  .ev-feat-desc { display: none; }
 
-  .ev-detail-inner {
-    padding: 24px 20px;
-  }
+  .ev-feat-title { font-size: 1.6rem; }
 
-  .ev-detail-desc {
-    display: none;
-  }
+  .ev-dots { display: none; }
 }

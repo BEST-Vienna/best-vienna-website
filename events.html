@@ -34,147 +34,118 @@
       <div class="container ev-hero-inner">
         <span class="ev-hero-label">BEST Vienna</span>
         <h1 class="ev-hero-title">Our Events</h1>
-        <p class="ev-hero-sub">Four unique experiences. One unforgettable community.</p>
+        <p class="ev-hero-sub">Six unique experiences. One unforgettable community.</p>
         <a href="#selector" class="ev-hero-scroll" aria-label="Scroll to events">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
       </div>
     </section>
 
-    <!-- ===== Character-Select Arena ===== -->
+    <!-- ===== Selector ===== -->
     <section class="ev-selector" id="selector">
-      <div class="ev-selector-hint fade-up" aria-hidden="true">— Select an event to explore —</div>
+      <div class="ev-hint fade-up" aria-live="polite" id="evHint">— Select an event to explore —</div>
 
-      <div class="ev-arena" role="list" aria-label="Events">
+      <div class="ev-stage" id="evStage">
 
-        <!-- SC -->
-        <div class="ev-panel" data-event="sc" role="listitem" tabindex="0" aria-label="BEST Course in Summer">
-          <div class="ev-panel-bg" style="--ev-bg-image: url('https://placehold.co/800x1000/e8521a/ffffff?text=SC');" aria-hidden="true"></div>
-          <div class="ev-panel-overlay" aria-hidden="true"></div>
-
-          <div class="ev-panel-idle">
-            <div class="ev-panel-abbr">SC</div>
-            <div class="ev-panel-name">BEST Course<br>in Summer</div>
-          </div>
-
-          <div class="ev-panel-detail" aria-hidden="true">
-            <div class="ev-detail-inner">
-              <div class="ev-detail-tag">Academic &amp; Cultural</div>
-              <h2 class="ev-detail-title">BEST Course<br>in Summer</h2>
-              <p class="ev-detail-desc">
-                Each summer, TU Wien students can apply for a fully-funded 10-day academic course hosted by one of 84 BEST groups across Europe. Immerse yourself in cutting-edge tech topics, make lifelong friends, and explore a new country — all for free.
-              </p>
-              <ul class="ev-detail-facts" aria-label="Key facts">
-                <li><span class="ev-fact-icon">🗓</span> July – August</li>
-                <li><span class="ev-fact-icon">📍</span> Across Europe</li>
-                <li><span class="ev-fact-icon">⏱</span> ~10 days</li>
-                <li><span class="ev-fact-icon">🎓</span> Open to TU Wien students</li>
-              </ul>
-              <a href="mailto:vienna-bestcourses@best-eu.org" class="btn btn-primary ev-detail-cta">Apply Now</a>
+        <!-- Featured panel (expands on selection) -->
+        <div class="ev-featured" id="evFeatured" aria-label="Event detail" role="region">
+          <div class="ev-feat-bg" id="evFeatBg" aria-hidden="true"></div>
+          <div class="ev-feat-overlay" aria-hidden="true"></div>
+          <div class="ev-feat-content">
+            <div class="ev-feat-left">
+              <span class="ev-feat-tag" id="evFeatTag"></span>
+              <h2 class="ev-feat-title" id="evFeatTitle"></h2>
+              <p class="ev-feat-desc" id="evFeatDesc"></p>
+              <ul class="ev-feat-facts" id="evFeatFacts" aria-label="Key facts"></ul>
+              <a class="btn btn-primary ev-feat-cta" id="evFeatCta" href="#">—</a>
             </div>
           </div>
-
-          <div class="ev-panel-num" aria-hidden="true">01</div>
+          <div class="ev-feat-deco" id="evFeatDeco" aria-hidden="true"></div>
+          <button class="ev-feat-close" id="evFeatClose" aria-label="Close event detail">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
         </div>
 
-        <!-- aRM -->
-        <div class="ev-panel" data-event="arm" role="listitem" tabindex="0" aria-label="Autumn Regional Meeting">
-          <div class="ev-panel-bg" style="--ev-bg-image: url('https://placehold.co/800x1000/1e3a5f/ffffff?text=aRM');" aria-hidden="true"></div>
-          <div class="ev-panel-overlay" aria-hidden="true"></div>
+        <!-- Cards grid (6 events) -->
+        <div class="ev-cards" id="evCards" role="list" aria-label="Events">
 
-          <div class="ev-panel-idle">
-            <div class="ev-panel-abbr">aRM</div>
-            <div class="ev-panel-name">Autumn Regional<br>Meeting</div>
-          </div>
-
-          <div class="ev-panel-detail" aria-hidden="true">
-            <div class="ev-detail-inner">
-              <div class="ev-detail-tag">Internal Event</div>
-              <h2 class="ev-detail-title">Autumn Regional<br>Meeting</h2>
-              <p class="ev-detail-desc">
-                The Autumn Regional Meeting gathers BEST members from across Central Europe for a weekend of workshops, discussions, and networking. Vienna takes the stage as host, organizing sessions on internal strategy and future planning.
-              </p>
-              <ul class="ev-detail-facts" aria-label="Key facts">
-                <li><span class="ev-fact-icon">🗓</span> October – November</li>
-                <li><span class="ev-fact-icon">📍</span> Vienna, Austria</li>
-                <li><span class="ev-fact-icon">⏱</span> 3 days</li>
-                <li><span class="ev-fact-icon">👥</span> BEST members &amp; delegates</li>
-              </ul>
-              <a href="mailto:vienna@best-eu.org" class="btn btn-primary ev-detail-cta">Learn More</a>
+          <!-- 01 · SC -->
+          <div class="ev-card" data-event="sc" style="--ca:#e8521a;--cb:#7a1e05" role="listitem" tabindex="0" aria-label="BEST Course in Summer">
+            <div class="ev-card-bg" aria-hidden="true"></div>
+            <div class="ev-card-overlay" aria-hidden="true"></div>
+            <div class="ev-card-body">
+              <div class="ev-card-abbr">SC</div>
+              <div class="ev-card-name">BEST Course<br>in Summer</div>
             </div>
+            <div class="ev-card-num" aria-hidden="true">01</div>
           </div>
 
-          <div class="ev-panel-num" aria-hidden="true">02</div>
-        </div>
-
-        <!-- beWANTED -->
-        <div class="ev-panel" data-event="bw" role="listitem" tabindex="0" aria-label="beWANTED Career Event">
-          <div class="ev-panel-bg" style="--ev-bg-image: url('https://placehold.co/800x1000/0d6e8a/ffffff?text=beWANTED');" aria-hidden="true"></div>
-          <div class="ev-panel-overlay" aria-hidden="true"></div>
-
-          <div class="ev-panel-idle">
-            <div class="ev-panel-abbr">beWANTED</div>
-            <div class="ev-panel-name">Career &amp;<br>Employer Event</div>
-          </div>
-
-          <div class="ev-panel-detail" aria-hidden="true">
-            <div class="ev-detail-inner">
-              <div class="ev-detail-tag">Career &amp; Industry</div>
-              <h2 class="ev-detail-title">beWANTED</h2>
-              <p class="ev-detail-desc">
-                beWANTED is Vienna's flagship career fair, bridging TU Wien students with top engineering and tech companies. From casual networking to on-site interviews, land your next internship, thesis project, or full-time position.
-              </p>
-              <ul class="ev-detail-facts" aria-label="Key facts">
-                <li><span class="ev-fact-icon">🗓</span> Spring semester</li>
-                <li><span class="ev-fact-icon">📍</span> TU Wien campus</li>
-                <li><span class="ev-fact-icon">⏱</span> 1–2 days</li>
-                <li><span class="ev-fact-icon">🎓</span> Open to TU Wien students</li>
-              </ul>
-              <a href="mailto:vienna@best-eu.org" class="btn btn-primary ev-detail-cta">Meet Companies</a>
+          <!-- 02 · aRM -->
+          <div class="ev-card" data-event="arm" style="--ca:#1e6aaa;--cb:#0b1e36" role="listitem" tabindex="0" aria-label="Autumn Regional Meeting">
+            <div class="ev-card-bg" aria-hidden="true"></div>
+            <div class="ev-card-overlay" aria-hidden="true"></div>
+            <div class="ev-card-body">
+              <div class="ev-card-abbr">aRM</div>
+              <div class="ev-card-name">Autumn Regional<br>Meeting</div>
             </div>
+            <div class="ev-card-num" aria-hidden="true">02</div>
           </div>
 
-          <div class="ev-panel-num" aria-hidden="true">03</div>
-        </div>
-
-        <!-- MW -->
-        <div class="ev-panel" data-event="mw" role="listitem" tabindex="0" aria-label="Motivational Weekends">
-          <div class="ev-panel-bg" style="--ev-bg-image: url('assets/images/MotivationalWeekend.jpg');" aria-hidden="true"></div>
-          <div class="ev-panel-overlay" aria-hidden="true"></div>
-
-          <div class="ev-panel-idle">
-            <div class="ev-panel-abbr">MW</div>
-            <div class="ev-panel-name">Motivational<br>Weekends</div>
-          </div>
-
-          <div class="ev-panel-detail" aria-hidden="true">
-            <div class="ev-detail-inner">
-              <div class="ev-detail-tag">Social &amp; Community</div>
-              <h2 class="ev-detail-title">Motivational<br>Weekends</h2>
-              <p class="ev-detail-desc">
-                Motivational Weekends are fun-packed weekend adventures organized for bonding and friendship. Team games, hiking, city trips, and unforgettable evenings — the perfect way to connect with BEST Vienna members and explore Austria.
-              </p>
-              <ul class="ev-detail-facts" aria-label="Key facts">
-                <li><span class="ev-fact-icon">🗓</span> Throughout the year</li>
-                <li><span class="ev-fact-icon">📍</span> Austria &amp; beyond</li>
-                <li><span class="ev-fact-icon">⏱</span> 2–3 days</li>
-                <li><span class="ev-fact-icon">🎉</span> BEST members &amp; friends</li>
-              </ul>
-              <a href="mailto:vienna@best-eu.org" class="btn btn-primary ev-detail-cta">Join the Fun</a>
+          <!-- 03 · beWANTED -->
+          <div class="ev-card" data-event="bw" style="--ca:#0d8aaa;--cb:#044f65" role="listitem" tabindex="0" aria-label="beWANTED Career Event">
+            <div class="ev-card-bg" aria-hidden="true"></div>
+            <div class="ev-card-overlay" aria-hidden="true"></div>
+            <div class="ev-card-body">
+              <div class="ev-card-abbr">beWANTED</div>
+              <div class="ev-card-name">Career &amp;<br>Employer Event</div>
             </div>
+            <div class="ev-card-num" aria-hidden="true">03</div>
           </div>
 
-          <div class="ev-panel-num" aria-hidden="true">04</div>
-        </div>
+          <!-- 04 · MW -->
+          <div class="ev-card" data-event="mw" style="--ca:#7b52b8;--cb:#3d1f6a" role="listitem" tabindex="0" aria-label="Motivational Weekends">
+            <div class="ev-card-bg" aria-hidden="true"></div>
+            <div class="ev-card-overlay" aria-hidden="true"></div>
+            <div class="ev-card-body">
+              <div class="ev-card-abbr">MW</div>
+              <div class="ev-card-name">Motivational<br>Weekends</div>
+            </div>
+            <div class="ev-card-num" aria-hidden="true">04</div>
+          </div>
 
-      </div><!-- /ev-arena -->
+          <!-- 05 · placeholder -->
+          <div class="ev-card ev-card--placeholder" data-event="ph1" style="--ca:#3a8a6a;--cb:#1a3a2a" role="listitem" tabindex="0" aria-label="Coming Soon">
+            <div class="ev-card-bg" aria-hidden="true"></div>
+            <div class="ev-card-overlay" aria-hidden="true"></div>
+            <div class="ev-card-body">
+              <div class="ev-card-abbr">?</div>
+              <div class="ev-card-name">Coming<br>Soon</div>
+            </div>
+            <div class="ev-card-num" aria-hidden="true">05</div>
+          </div>
 
-      <!-- Indicator dots -->
-      <div class="ev-dots" role="tablist" aria-label="Event navigation">
-        <button class="ev-dot" data-target="sc" role="tab" aria-label="BEST Course in Summer"></button>
+          <!-- 06 · placeholder -->
+          <div class="ev-card ev-card--placeholder" data-event="ph2" style="--ca:#9a6a2a;--cb:#3a2010" role="listitem" tabindex="0" aria-label="Coming Soon">
+            <div class="ev-card-bg" aria-hidden="true"></div>
+            <div class="ev-card-overlay" aria-hidden="true"></div>
+            <div class="ev-card-body">
+              <div class="ev-card-abbr">?</div>
+              <div class="ev-card-name">Coming<br>Soon</div>
+            </div>
+            <div class="ev-card-num" aria-hidden="true">06</div>
+          </div>
+
+        </div><!-- /ev-cards -->
+      </div><!-- /ev-stage -->
+
+      <!-- Dots indicator -->
+      <div class="ev-dots" id="evDots" role="tablist" aria-label="Event navigation">
+        <button class="ev-dot" data-target="sc"  role="tab" aria-label="BEST Course in Summer"></button>
         <button class="ev-dot" data-target="arm" role="tab" aria-label="Autumn Regional Meeting"></button>
-        <button class="ev-dot" data-target="bw" role="tab" aria-label="beWANTED"></button>
-        <button class="ev-dot" data-target="mw" role="tab" aria-label="Motivational Weekends"></button>
+        <button class="ev-dot" data-target="bw"  role="tab" aria-label="beWANTED"></button>
+        <button class="ev-dot" data-target="mw"  role="tab" aria-label="Motivational Weekends"></button>
+        <button class="ev-dot" data-target="ph1" role="tab" aria-label="Coming Soon"></button>
+        <button class="ev-dot" data-target="ph2" role="tab" aria-label="Coming Soon"></button>
       </div>
 
     </section><!-- /ev-selector -->
