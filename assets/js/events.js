@@ -20,6 +20,7 @@
       ],
       cta: { text: 'Apply Now', href: 'mailto:vienna-bestcourses@best-eu.org' },
       colorA: '#e8521a', colorB: '#7a1e05',
+      image: 'assets/images/events/BEST_Course.jpg',
     },
     arm: {
       abbr: 'aRM',
@@ -34,6 +35,7 @@
       ],
       cta: { text: 'Learn More', href: 'mailto:vienna@best-eu.org' },
       colorA: '#1e6aaa', colorB: '#0b1e36',
+      image: 'assets/images/events/aRegionalMeeting.jpg',
     },
     bw: {
       abbr: 'beWANTED',
@@ -48,6 +50,7 @@
       ],
       cta: { text: 'Meet Companies', href: 'mailto:vienna@best-eu.org' },
       colorA: '#0d8aaa', colorB: '#044f65',
+      image: 'assets/images/events/beWANTED.jpg',
     },
     mw: {
       abbr: 'MW',
@@ -62,10 +65,10 @@
       ],
       cta: { text: 'Join the Fun', href: 'mailto:vienna@best-eu.org' },
       colorA: '#7b52b8', colorB: '#3d1f6a',
-      image: 'assets/images/MotivationalWeekend.jpg',
+      image: 'assets/images/events/MotivationalWeekend.jpg',
     },
     ph1: {
-      abbr: '?',
+      abbr: 'G2K',
       name: 'Coming Soon',
       tag: 'New Event',
       desc: "Something exciting is in the making. Stay tuned for updates on our next event — coming soon to BEST Vienna. Follow our social media for the latest announcements.",
@@ -79,7 +82,7 @@
       colorA: '#3a8a6a', colorB: '#1a3a2a',
     },
     ph2: {
-      abbr: '?',
+      abbr: 'BSE',
       name: 'Coming Soon',
       tag: 'New Event',
       desc: "Another exciting event is being planned for the BEST Vienna calendar. Follow us on social media for the latest announcements, dates, and how to get involved.",
@@ -91,8 +94,50 @@
       ],
       cta: { text: 'Follow Us', href: 'https://www.instagram.com/bestvienna' },
       colorA: '#9a6a2a', colorB: '#3a2010',
+      image: 'assets/images/events/BSE.jpg',
     },
   };
+
+  /* ---------- Render cards & dots from EVENTS data ---------- */
+  function hexToRgb(hex) {
+    return parseInt(hex.slice(1, 3), 16) + ',' +
+           parseInt(hex.slice(3, 5), 16) + ',' +
+           parseInt(hex.slice(5, 7), 16);
+  }
+
+  function renderCards() {
+    const cardsEl = document.getElementById('evCards');
+    const dotsEl  = document.getElementById('evDots');
+    if (!cardsEl || !dotsEl) return;
+
+    const entries = Object.entries(EVENTS);
+
+    cardsEl.innerHTML = entries.map(function ([id, ev], i) {
+      const num        = String(i + 1).padStart(2, '0');
+      const extraClass = ev.abbr === '?' ? ' ev-card--placeholder' : '';
+      const bgStyle    = ev.image
+        ? ' style="background-image: linear-gradient(160deg, rgba(' + hexToRgb(ev.colorA) + ',0.55) 0%, rgba(' + hexToRgb(ev.colorB) + ',0.72) 100%), url(\'' + ev.image + '\'); background-size: cover; background-position: center;"'
+        : '';
+
+      return (
+        '<div class="ev-card' + extraClass + '" data-event="' + id + '" style="--ca:' + ev.colorA + ';--cb:' + ev.colorB + '" role="listitem" tabindex="0" aria-label="' + ev.name + '">' +
+        '<div class="ev-card-bg" aria-hidden="true"' + bgStyle + '></div>' +
+        '<div class="ev-card-overlay" aria-hidden="true"></div>' +
+        '<div class="ev-card-body">' +
+        '<div class="ev-card-abbr">' + ev.abbr + '</div>' +
+        '<div class="ev-card-name">' + ev.name + '</div>' +
+        '</div>' +
+        '<div class="ev-card-num" aria-hidden="true">' + num + '</div>' +
+        '</div>'
+      );
+    }).join('');
+
+    dotsEl.innerHTML = entries.map(function ([id, ev]) {
+      return '<button class="ev-dot" data-target="' + id + '" role="tab" aria-label="' + ev.name + '"></button>';
+    }).join('');
+  }
+
+  renderCards();
 
   /* ---------- DOM refs ---------- */
   const stage     = document.getElementById('evStage');
@@ -109,7 +154,7 @@
   const featImage = document.getElementById('evFeatImage');
   const featImg   = document.getElementById('evFeatImg');
   const hint      = document.getElementById('evHint');
-  const dots      = document.querySelectorAll('.ev-dot');
+  const dots      = () => [...document.querySelectorAll('.ev-dot')];
   const cards     = () => [...document.querySelectorAll('.ev-card')];
 
   if (!stage) return;
@@ -150,7 +195,7 @@
 
   /* ---------- Sync dots ---------- */
   function syncDots(id) {
-    dots.forEach(d => {
+    dots().forEach(d => {
       const active = d.dataset.target === id;
       d.classList.toggle('active', active);
       d.setAttribute('aria-selected', active);
@@ -333,7 +378,7 @@
     });
   });
 
-  dots.forEach(dot => {
+  dots().forEach(dot => {
     dot.addEventListener('click', () => activate(dot.dataset.target));
   });
 

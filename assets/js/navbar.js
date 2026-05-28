@@ -3,7 +3,7 @@
   <header class="navbar">
     <div class="container navbar-inner">
       <a href="index.html" class="nav-logo">
-        <img src="assets/images/BESTViennaSVG.svg" alt="BEST Vienna" />
+        <img src="assets/images/logos/BESTViennaSVG.svg" alt="BEST Vienna" />
       </a>
 
       <nav class="nav-links" aria-label="Main navigation">

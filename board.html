@@ -14,7 +14,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <link rel="icon" href="assets/images/logo_lg.png" type="image/png" />
+  <link rel="icon" href="assets/images/logos/logo_lg.png" type="image/png" />
 </head>
 <body>
 
@@ -32,11 +32,11 @@
 
     <!-- ===== Board Hero ===== -->
     <section class="board-hero">
-      <img src="assets/images/board_group.jpg" alt="BEST Vienna board group photo" class="board-hero-img" />
+      <img src="assets/images/board/board_group.jpg" alt="BEST Vienna board group photo" class="board-hero-img" />
       <div class="board-hero-overlay" aria-hidden="true"></div>
       <div class="container board-hero-content">
         <span class="board-hero-label">BEST Vienna</span>
-        <h1>The XXII Board of LBG Vienna</h1>
+        <h1 id="board-hero-title">The Board of LBG Vienna</h1>
       </div>
     </section>
 
@@ -50,80 +50,8 @@
           </p>
         </div>
 
-        <div class="board-members-grid">
-
-          <!-- Mateo Mena Herrera -->
-          <div class="member-card fade-up delay-1">
-            <div class="member-photo-wrap">
-              <img src="assets/images/mateo.jpg" alt="Mateo Mena Herrera" />
-            </div>
-            <h3>Mateo Mena Herrera</h3>
-            <div class="member-role">President</div>
-            <div class="member-divider"></div>
-            <p class="member-study">Technical Physics</p>
-            <a href="mailto:mateo.mena.herrera@best-eu.org" class="member-email">mateo.mena.herrera@best-eu.org</a>
-          </div>
-
-          <!-- Teodora Lulciuc -->
-          <div class="member-card fade-up delay-2">
-            <div class="member-photo-wrap">
-              <img src="assets/images/teodora.jpg" alt="Teodora Lulciuc" />
-            </div>
-            <h3>Teodora Lulciuc</h3>
-            <div class="member-role">Secretary</div>
-            <div class="member-divider"></div>
-            <p class="member-study">Architecture</p>
-            <a href="mailto:teodora.lulciuc@best-eu.org" class="member-email">teodora.lulciuc@best-eu.org</a>
-          </div>
-
-          <!-- Tobias Reicherzer -->
-          <div class="member-card fade-up delay-3">
-            <div class="member-photo-wrap">
-              <img src="assets/images/tobias.jpg" alt="Tobias Reicherzer" />
-            </div>
-            <h3>Tobias Reicherzer</h3>
-            <div class="member-role">Treasurer</div>
-            <div class="member-divider"></div>
-            <p class="member-study">Informatics</p>
-            <a href="mailto:tobias.reicherzer@best-eu.org" class="member-email">tobias.reicherzer@best-eu.org</a>
-          </div>
-
-          <!-- Eszter Anna Torgyk -->
-          <div class="member-card fade-up delay-1">
-            <div class="member-photo-wrap">
-              <img src="assets/images/eszter.jpg" alt="Eszter Anna Torgyk" />
-            </div>
-            <h3>Eszter Anna Torgyk</h3>
-            <div class="member-role">Vice President for Public Relations</div>
-            <div class="member-divider"></div>
-            <p class="member-study">Architecture</p>
-            <a href="mailto:eszter.anna.torgyik@best-eu.org" class="member-email">eszter.anna.torgyik@best-eu.org</a>
-          </div>
-
-          <!-- Patrick Wunetich -->
-          <div class="member-card fade-up delay-2">
-            <div class="member-photo-wrap">
-              <img src="assets/images/patrick.jpg" alt="Patrick Wunetich" />
-            </div>
-            <h3>Patrick Wunetich</h3>
-            <div class="member-role">Vice President for Corporate Relations</div>
-            <div class="member-divider"></div>
-            <p class="member-study">Informatics</p>
-            <a href="mailto:patrick.wunetich@best-eu.org" class="member-email">patrick.wunetich@best-eu.org</a>
-          </div>
-
-          <!-- Iulian-Ilie Apostol -->
-          <div class="member-card fade-up delay-3">
-            <div class="member-photo-wrap">
-              <img src="assets/images/iulian.jpg" alt="Iulian-Ilie Apostol" />
-            </div>
-            <h3>Iulian-Ilie Apostol</h3>
-            <div class="member-role">Vice President for Human Resources</div>
-            <div class="member-divider"></div>
-            <p class="member-study">Geodesie</p>
-            <a href="mailto:iulian-ilie.apostol@best-eu.org" class="member-email">iulian-ilie.apostol@best-eu.org</a>
-          </div>
-
+        <div class="board-members-grid" id="board-members-grid">
+          <!-- Populated by config.js + inline script below -->
         </div>
       </div>
     </section>
@@ -134,6 +62,30 @@
   <div id="footer-placeholder"></div>
   <script src="assets/js/footer.js"></script>
 
+  <script src="assets/js/config.js"></script>
+  <script>
+    // Render board hero title
+    document.getElementById('board-hero-title').textContent =
+      'The ' + BOARD_TERM + ' Board of LBG Vienna';
+
+    // Render member cards
+    const delays = ['delay-1', 'delay-2', 'delay-3'];
+    const grid = document.getElementById('board-members-grid');
+    grid.innerHTML = BOARD_MEMBERS.map(function (m, i) {
+      return [
+        '<div class="member-card fade-up ' + delays[i % 3] + '">',
+        '  <div class="member-photo-wrap">',
+        '    <img src="assets/images/board/' + m.photo + '" alt="' + m.name + '" />',
+        '  </div>',
+        '  <h3>' + m.name + '</h3>',
+        '  <div class="member-role">' + m.role + '</div>',
+        '  <div class="member-divider"></div>',
+        '  <p class="member-study">' + m.study + '</p>',
+        '  <a href="mailto:' + m.email + '" class="member-email">' + m.email + '</a>',
+        '</div>',
+      ].join('\n');
+    }).join('\n');
+  </script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
