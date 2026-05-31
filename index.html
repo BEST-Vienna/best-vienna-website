@@ -103,25 +103,41 @@
     </section>
 
     <!-- ===== 4. BEST in NUMBERS ===== -->
-    <section class="stats-bar">
-      <div class="container">
-        <div class="stats-bar-inner">
-          <div class="stats-bar-item fade-up delay-1">
-            <div class="stat-number" id="stat-local-groups" data-target="84" data-suffix="">84</div>
-            <div class="stat-label">Local BEST Groups</div>
+    <section class="numbers-section">
+      <div class="numbers-inner">
+        <div class="bubble-wrap">
+
+          <!-- Background title bubble (lowest z-index) -->
+          <div class="bubble bubble-center">
+            <div class="bubble-center-title">BEST in</div>
+            <div class="bubble-center-bold">NUMBERS</div>
           </div>
-          <div class="stats-bar-item fade-up delay-2">
-            <div class="stat-number" id="stat-countries" data-target="30" data-suffix="">30</div>
-            <div class="stat-label">Countries</div>
+
+          <!-- Stat bubbles (on top of background) -->
+          <div class="bubble bubble-stat bubble-a bubble-pulse fade-up delay-1">
+            <div class="bubble-number" id="stat-local-groups" data-target="84" data-suffix="">84</div>
+            <div class="bubble-label">Local BEST<br>Groups</div>
           </div>
-          <div class="stats-bar-item fade-up delay-3">
-            <div class="stat-number" id="stat-volunteers" data-target="4000" data-suffix="+">4000+</div>
-            <div class="stat-label">Volunteers</div>
+
+          <div class="bubble bubble-stat bubble-b bubble-pulse fade-up delay-2">
+            <div class="bubble-number" id="stat-countries" data-target="30" data-suffix="">30</div>
+            <div class="bubble-label">Countries</div>
           </div>
-          <div class="stats-bar-item fade-up delay-4">
-            <div class="stat-number" id="stat-vienna-members" data-target="40" data-suffix="">~40</div>
-            <div class="stat-label">Members in Vienna</div>
+
+          <div class="bubble bubble-stat bubble-c bubble-pulse fade-up delay-3">
+            <div class="bubble-number" id="stat-volunteers" data-target="4000" data-suffix="+">4000+</div>
+            <div class="bubble-label">Volunteers</div>
           </div>
+
+          <!-- Decorative dots -->
+          <div class="bubble-dot dot-lg"  style="left:510px; top:18px;  background:var(--navy); opacity:0.22;"></div>
+          <div class="bubble-dot dot-lg"  style="left:368px; top:318px; background:var(--gray-light); opacity:0.55;"></div>
+          <div class="bubble-dot dot-md"  style="left:48px;  top:328px; background:var(--orange); opacity:0.45;"></div>
+          <div class="bubble-dot dot-sm"  style="left:245px; top:6px;   background:var(--orange); opacity:0.6;"></div>
+          <div class="bubble-dot dot-md"  style="left:438px; top:218px; background:var(--orange-light); opacity:0.5;"></div>
+          <div class="bubble-dot dot-sm"  style="left:10px;  top:115px; background:var(--navy); opacity:0.3;"></div>
+          <div class="bubble-dot dot-xs"  style="right:72px; top:28px;  background:var(--orange); opacity:0.55;"></div>
+
         </div>
       </div>
     </section>
@@ -253,7 +269,7 @@
 
   <script src="assets/js/config.js"></script>
   <script>
-    // Inject BEST_STATS values into prose and stats bar
+    // Inject BEST_STATS values into prose and bubble stats
     document.getElementById('stat-active-members').textContent       = BEST_STATS.activeMembers;
     document.getElementById('stat-countries-join').textContent        = BEST_STATS.countries;
     document.getElementById('stat-active-members-pillar').textContent = BEST_STATS.activeMembers;
@@ -269,10 +285,6 @@
     var vEl = document.getElementById('stat-volunteers');
     vEl.textContent    = BEST_STATS.volunteers + '+';
     vEl.dataset.target = BEST_STATS.volunteers;
-
-    var vmEl = document.getElementById('stat-vienna-members');
-    vmEl.textContent    = '~' + BEST_STATS.activeMembers;
-    vmEl.dataset.target = BEST_STATS.activeMembers;
   </script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/events.js"></script>
