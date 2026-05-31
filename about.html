@@ -56,30 +56,30 @@
             </p>
             <p>
               We are part of a European-wide network — <strong>BEST: Board of European Students of
-              Technology</strong> — spanning 84 Local BEST Groups across 30 countries. In short: a
+              Technology</strong> — spanning <span id="about-stat-groups-text">79</span> Local BEST Groups across <span id="about-stat-countries-text">29</span> countries. In short: a
               non-profit, non-political student organisation working for youth development, connecting
               people from different countries and helping everyone develop an international mindset.
             </p>
             <p>
-              Founded in 1989, BEST has grown into a community of over 4 000 volunteers bringing
+              Founded in 1989, BEST has grown into a community of over <span id="about-stat-volunteers-text">3 300</span> volunteers bringing
               students and industry closer together across Europe.
             </p>
 
             <div class="about-stat-row">
               <div class="about-stat">
-                <div class="about-stat-num">84</div>
+                <div class="about-stat-num" id="about-stat-groups">79</div>
                 <div class="about-stat-label">Local Groups</div>
               </div>
               <div class="about-stat">
-                <div class="about-stat-num">30</div>
+                <div class="about-stat-num" id="about-stat-countries">29</div>
                 <div class="about-stat-label">Countries</div>
               </div>
               <div class="about-stat">
-                <div class="about-stat-num">4 000+</div>
+                <div class="about-stat-num" id="about-stat-vol">3 300+</div>
                 <div class="about-stat-label">Volunteers</div>
               </div>
               <div class="about-stat">
-                <div class="about-stat-num">~40</div>
+                <div class="about-stat-num" id="about-stat-members">~40</div>
                 <div class="about-stat-label">Members in Vienna</div>
               </div>
             </div>
@@ -175,7 +175,7 @@
           <div class="benefit-card fade-up delay-3">
             <div class="benefit-icon">🌍</div>
             <h4>International Mindset</h4>
-            <p>We all speak English (and German!) and connect you with a network spanning 30 European countries.</p>
+            <p>We all speak English (and German!) and connect you with a network spanning <span id="about-benefit-countries">29</span> European countries.</p>
           </div>
 
           <div class="benefit-card fade-up delay-1">
@@ -293,6 +293,16 @@
         '</div>',
       ].join('\n');
     }).join('\n');
+
+    // Inject BEST_STATS into about page
+    document.getElementById('about-stat-groups').textContent    = BEST_STATS.localGroups;
+    document.getElementById('about-stat-countries').textContent = BEST_STATS.countries;
+    document.getElementById('about-stat-vol').textContent       = BEST_STATS.volunteers.toLocaleString() + '+';
+    document.getElementById('about-stat-members').textContent   = '~' + BEST_STATS.activeMembers;
+    document.getElementById('about-stat-groups-text').textContent    = BEST_STATS.localGroups;
+    document.getElementById('about-stat-countries-text').textContent = BEST_STATS.countries;
+    document.getElementById('about-stat-volunteers-text').textContent = BEST_STATS.volunteers.toLocaleString();
+    document.getElementById('about-benefit-countries').textContent   = BEST_STATS.countries;
   </script>
   <script src="assets/js/main.js"></script>
 </body>

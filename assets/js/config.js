@@ -55,8 +55,8 @@ const BOARD_MEMBERS = [
 
 /* ---------- Organisation-wide stats ---------- */
 const BEST_STATS = {
-  localGroups:   84,    // number of Local BEST Groups across Europe
-  countries:     30,    // number of countries
-  volunteers:    4000,  // approximate number of volunteers
+  localGroups:   79,    // number of Local BEST Groups across Europe
+  countries:     29,    // number of countries
+  volunteers:    3300,  // approximate number of volunteers
   activeMembers: 40,    // active members in Vienna
 };
