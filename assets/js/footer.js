@@ -12,7 +12,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="https://www.bestvienna.at/news">Courses</a></li>
-          <li><a href="https://www.bestvienna.at/about">About Us</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="board.html">Board</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="index.html#contact">Contact</a></li>

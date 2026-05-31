@@ -1756,3 +1756,291 @@ p {
   background: var(--orange-dark);
   transform: translateY(-2px);
 }
+
+/* ============================================
+   ABOUT PAGE
+   ============================================ */
+
+/* ---------- About Hero (reuses board-hero base) ---------- */
+.about-hero {
+  position: relative;
+  height: calc(60vh - 112px);
+  min-height: 340px;
+  overflow: hidden;
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,21,33,0.85) 0%, rgba(0,21,33,0.35) 55%, transparent 100%);
+}
+
+.about-hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding-bottom: 52px;
+  color: var(--white);
+}
+
+.about-hero-content .board-hero-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.about-hero-content h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.about-hero-content p {
+  color: rgba(255,255,255,0.75);
+  font-size: 1.05rem;
+  max-width: 540px;
+}
+
+/* ---------- Who We Are (split layout) ---------- */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.about-split-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.about-split-img img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.about-split-img:hover img {
+  transform: scale(1.03);
+}
+
+.about-split-text .board-hero-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.about-split-text h2 {
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.about-split-text p {
+  margin-bottom: 16px;
+}
+
+.about-stat-row {
+  display: flex;
+  gap: 36px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.about-stat {
+  text-align: center;
+}
+
+.about-stat-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.about-stat-label {
+  font-size: 0.78rem;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+
+/* ---------- What We Do (service cards) ---------- */
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+}
+
+.service-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.service-card-body {
+  padding: 24px;
+}
+
+.service-card-tag {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+
+.service-card-body h3 {
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.service-card-body p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* ---------- Why Join (benefits grid) ---------- */
+.benefits-section {
+  background: var(--navy);
+  padding: 80px 0;
+}
+
+.benefits-section .section-title {
+  color: var(--white);
+}
+
+.benefits-section .section-subtitle {
+  color: rgba(255,255,255,0.65);
+}
+
+.benefits-intro {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.benefit-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.benefit-card:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-4px);
+}
+
+.benefit-icon {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+.benefit-card h4 {
+  font-size: 1rem;
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.benefit-card p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+}
+
+/* ---------- Join CTA band ---------- */
+.about-cta {
+  background: var(--off-white);
+  padding: 80px 0;
+}
+
+.about-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-cta h2 {
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.about-cta p {
+  margin-bottom: 28px;
+}
+
+.about-cta .highlight-box {
+  margin-top: 0;
+}
+
+/* ---------- About responsive ---------- */
+@media (max-width: 900px) {
+  .about-split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .service-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-cta-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stat-row {
+    gap: 24px;
+  }
+}
