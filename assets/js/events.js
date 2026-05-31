@@ -80,6 +80,7 @@
       ],
       cta: { text: 'Stay Tuned', href: 'https://www.instagram.com/bestvienna' },
       colorA: '#3a8a6a', colorB: '#1a3a2a',
+      image: 'assets/images/events/G2K.jpg',
     },
     ph2: {
       abbr: 'BSE',
