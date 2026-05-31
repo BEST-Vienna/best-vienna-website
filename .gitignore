@@ -54,3 +54,6 @@ $RECYCLE.BIN/
 *.swp
 *.tmp
 *~
+
+
+.playwright-mcp

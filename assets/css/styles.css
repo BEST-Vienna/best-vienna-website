@@ -971,6 +971,22 @@ p {
   display: block;
   overflow: hidden;
   background: var(--navy);
+  position: relative;
+}
+
+.hero-placeholder {
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/Website_Header_Loading_Placeholder.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+.hero-placeholder.fade-out {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .hero-video-bg {

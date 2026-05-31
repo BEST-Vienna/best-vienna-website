@@ -4,6 +4,18 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ---------- Hero video placeholder ----------
+  const heroVideo       = document.getElementById('heroVideo');
+  const heroPlaceholder = document.getElementById('heroPlaceholder');
+
+  if (heroVideo && heroPlaceholder) {
+    heroVideo.addEventListener('playing', function onPlay() {
+      heroPlaceholder.classList.add('fade-out');
+      heroVideo.removeEventListener('playing', onPlay);
+      setTimeout(() => heroPlaceholder.remove(), 450);
+    });
+  }
+
   // ---------- Mobile nav toggle ----------
   const hamburger = document.querySelector('.hamburger');
   const mobileNav = document.querySelector('.mobile-nav');
