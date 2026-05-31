@@ -13,7 +13,7 @@
           <li><a href="events.html">Events</a></li>
           <li><a href="https://www.bestvienna.at/news">Courses</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="board.html">Board</a></li>
+          <li><a href="about.html#board">Board</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="footer-bar">
-      <p>© 2025 BEST Vienna | All Rights Reserved | <a href="https://www.bestvienna.at/impressum">Impressum</a></p>
+      <p>© 2026 BEST Vienna | All Rights Reserved | <a href="https://www.bestvienna.at/impressum">Impressum</a></p>
     </div>
   </footer>`;
 

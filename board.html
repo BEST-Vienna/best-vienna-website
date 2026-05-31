@@ -4,88 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Board — BEST Vienna</title>
-  <meta name="description" content="Meet the XXII Board of LBG Vienna — the dedicated team leading BEST Vienna." />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=2" />
-
-  <link rel="icon" href="assets/images/logos/logo_lg.png" type="image/png" />
+  <meta name="description" content="Meet the Board of BEST Vienna — redirecting to About Us." />
+  <link rel="icon" href="assets/images/logos/best_logomark.png" type="image/png" />
+  <meta http-equiv="refresh" content="0; url=about.html#board" />
 </head>
 <body>
-
-  <!-- ===== Announcement Bar ===== -->
-  <div class="announcement-bar">
-    FOR QUESTIONS ABOUT BEST COURSES CONTACT US VIA
-    <a href="mailto:vienna-bestcourses@best-eu.org">vienna-bestcourses@best-eu.org</a>
-  </div>
-
-  <!-- ===== Navbar ===== -->
-  <div id="navbar-placeholder"></div>
-  <script src="assets/js/navbar.js"></script>
-
-  <main>
-
-    <!-- ===== Board Hero ===== -->
-    <section class="board-hero">
-      <img src="assets/images/board/board_group.jpg" alt="BEST Vienna board group photo" class="board-hero-img" />
-      <div class="board-hero-overlay" aria-hidden="true"></div>
-      <div class="container board-hero-content">
-        <span class="board-hero-label">BEST Vienna</span>
-        <h1 id="board-hero-title">The Board of LBG Vienna</h1>
-      </div>
-    </section>
-
-    <!-- ===== Board Members ===== -->
-    <section class="board-members-section section-pad">
-      <div class="container">
-        <div class="board-members-intro fade-up">
-          <h2 class="section-title">Meet the Board</h2>
-          <p class="section-subtitle">
-            Dedicated students from TU Wien working every day to connect, inspire, and grow the BEST Vienna community.
-          </p>
-        </div>
-
-        <div class="board-members-grid" id="board-members-grid">
-          <!-- Populated by config.js + inline script below -->
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===== Footer ===== -->
-  <div id="footer-placeholder"></div>
-  <script src="assets/js/footer.js"></script>
-
-  <script src="assets/js/config.js"></script>
-  <script>
-    // Render board hero title
-    document.getElementById('board-hero-title').textContent =
-      'The ' + BOARD_TERM + ' Board of LBG Vienna';
-
-    // Render member cards
-    const delays = ['delay-1', 'delay-2', 'delay-3'];
-    const grid = document.getElementById('board-members-grid');
-    grid.innerHTML = BOARD_MEMBERS.map(function (m, i) {
-      return [
-        '<div class="member-card fade-up ' + delays[i % 3] + '">',
-        '  <div class="member-photo-wrap">',
-        '    <img src="assets/images/board/' + m.photo + '" alt="' + m.name + '" />',
-        '  </div>',
-        '  <h3>' + m.name + '</h3>',
-        '  <div class="member-role">' + m.role + '</div>',
-        '  <div class="member-divider"></div>',
-        '  <p class="member-study">' + m.study + '</p>',
-        '  <a href="mailto:' + m.email + '" class="member-email">' + m.email + '</a>',
-        '</div>',
-      ].join('\n');
-    }).join('\n');
-  </script>
-  <script src="assets/js/main.js"></script>
+  <p>Redirecting to <a href="about.html#board">About Us — Board</a>…</p>
 </body>
 </html>

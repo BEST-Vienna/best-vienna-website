@@ -200,6 +200,26 @@
       </div>
     </section>
 
+    <!-- ===== Meet the Board ===== -->
+    <div class="section-divider container fade-up" id="board">
+      <span>OUR BOARD</span>
+    </div>
+
+    <section class="board-members-section section-pad">
+      <div class="container">
+        <div class="board-members-intro fade-up">
+          <h2 class="section-title" id="board-title">Meet the Board</h2>
+          <p class="section-subtitle">
+            Dedicated students from TU Wien working every day to connect, inspire, and grow the BEST Vienna community.
+          </p>
+        </div>
+
+        <div class="board-members-grid" id="board-members-grid">
+          <!-- Populated by config.js -->
+        </div>
+      </div>
+    </section>
+
     <!-- ===== Join CTA ===== -->
     <div class="section-divider container fade-up">
       <span>GET INVOLVED</span>
@@ -250,6 +270,30 @@
   <div id="footer-placeholder"></div>
   <script src="assets/js/footer.js"></script>
 
+  <script src="assets/js/config.js"></script>
+  <script>
+    // Render board title with current term
+    document.getElementById('board-title').textContent =
+      'The ' + BOARD_TERM + ' Board of LBG Vienna';
+
+    // Render member cards
+    var delays = ['delay-1', 'delay-2', 'delay-3'];
+    var grid = document.getElementById('board-members-grid');
+    grid.innerHTML = BOARD_MEMBERS.map(function (m, i) {
+      return [
+        '<div class="member-card fade-up ' + delays[i % 3] + '">',
+        '  <div class="member-photo-wrap">',
+        '    <img src="assets/images/board/' + m.photo + '" alt="' + m.name + '" />',
+        '  </div>',
+        '  <h3>' + m.name + '</h3>',
+        '  <div class="member-role">' + m.role + '</div>',
+        '  <div class="member-divider"></div>',
+        '  <p class="member-study">' + m.study + '</p>',
+        '  <a href="mailto:' + m.email + '" class="member-email">' + m.email + '</a>',
+        '</div>',
+      ].join('\n');
+    }).join('\n');
+  </script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

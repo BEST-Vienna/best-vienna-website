@@ -57,111 +57,71 @@
       </div>
     </section>
 
-    <!-- ===== 3. WHO ARE WE? divider ===== -->
+    <!-- ===== 3. WHAT WE OFFER ===== -->
     <div class="section-divider container fade-up">
-      <span>WHO ARE WE?</span>
+      <span>WHAT WE OFFER</span>
     </div>
 
-    <!-- ===== 4. Wordcloud (Mentimeter-style) ===== -->
-    <section class="wordcloud-section section-pad-sm">
-      <div class="container">
-        <div class="wordcloud-menti fade-up">
-          <svg id="wordcloudSvg"></svg>
-          <div class="wordcloud-fallback" aria-hidden="true">
-            BEST · Vienna · Students · Technology · Europe · Community ·
-            Events · Courses · Network · International · Engineering · Exchange ·
-            TU Wien · Career · Volunteer · 30 Countries · 84 LBGs · Non-profit
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 5. About / Mission / Community cards ===== -->
     <section class="pillars-section section-pad">
       <div class="container">
         <div class="pillars-grid">
-          <div class="pillar-card fade-up delay-1">
-            <img src="assets/images/sc22_group_lg.jpg" alt="About us" class="pillar-img" />
+          <a href="about.html" class="pillar-card fade-up delay-1">
+            <img src="assets/images/lga22_group_lg.jpg" alt="Join BEST Vienna" class="pillar-img" />
             <div class="pillar-body">
-              <div class="pillar-label">About us</div>
-              <h3>Our Local Group</h3>
+              <div class="pillar-label">For Students</div>
+              <h3>Join BEST Vienna</h3>
               <p>
-                <span id="stat-local-groups-pillar">84</span> Local BEST Groups in <span id="stat-countries-pillar">30</span> countries create a powerful, young, dynamic and
-                innovative student network. In Vienna, more than <span id="stat-active-members-pillar">20</span> members work every day to
-                provide activities, career days, competitions and academic courses for TU Wien students.
+                Become part of a community of <span id="stat-active-members-pillar">40</span> active members at TU Wien.
+                Organise events, develop skills, and make international friends — all while having fun.
               </p>
             </div>
-          </div>
-          <div class="pillar-card fade-up delay-2">
-            <img src="assets/images/mission_lg.jpg" alt="Our Mission" class="pillar-img" />
+          </a>
+          <a href="https://www.bestvienna.at/news" class="pillar-card fade-up delay-2">
+            <img src="assets/images/events/BEST_Course.jpg" alt="BEST Courses" class="pillar-img" />
             <div class="pillar-body">
-              <div class="pillar-label">Our Mission</div>
-              <h3>What We Stand For</h3>
+              <div class="pillar-label">For TU Wien Students</div>
+              <h3>BEST Courses</h3>
               <p>
-                BEST is a constantly growing non-profit and non-political organisation. Since 1989
-                we provide communication, co-operation and exchange possibilities for students
-                all over Europe.
+                Apply for fully-funded 10-day academic courses hosted across Europe.
+                Immerse yourself in cutting-edge topics, explore a new country — all for free.
               </p>
             </div>
-          </div>
-          <div class="pillar-card fade-up delay-3">
-            <img src="assets/images/lga22_group_lg.jpg" alt="Our Community" class="pillar-img" />
+          </a>
+          <a href="events.html" class="pillar-card fade-up delay-3">
+            <img src="assets/images/events/beWANTED.jpg" alt="Our Events" class="pillar-img" />
             <div class="pillar-body">
-              <div class="pillar-label">Our Community</div>
-              <h3>The BEST Triangle</h3>
+              <div class="pillar-label">Explore</div>
+              <h3>Our Events</h3>
               <p>
-                Our priority is to offer high-quality services and build links between the 3 members
-                of the BEST triangle: <strong>Students, Partners and Universities</strong>.
-                Learn more at <a href="https://www.best.eu.org/" style="color:var(--orange);font-weight:600;">best.eu.org</a>.
+                From career fairs and regional meetings to motivational weekends —
+                discover six unique experiences throughout the year.
               </p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ===== 6. BEST in NUMBERS ===== -->
-    <section class="numbers-section">
-      <div class="numbers-inner">
-        <div class="bubble-wrap">
-
-          <!-- Background title bubble (lowest z-index) -->
-          <div class="bubble bubble-center">
-            <div class="bubble-center-title">BEST in</div>
-            <div class="bubble-center-bold">NUMBERS</div>
+    <!-- ===== 4. BEST in NUMBERS ===== -->
+    <section class="stats-bar">
+      <div class="container">
+        <div class="stats-bar-inner">
+          <div class="stats-bar-item fade-up delay-1">
+            <div class="stat-number" id="stat-local-groups" data-target="84" data-suffix="">84</div>
+            <div class="stat-label">Local BEST Groups</div>
           </div>
-
-          <!-- Stat bubbles (on top of background) -->
-          <div class="bubble bubble-stat bubble-a bubble-pulse fade-up delay-1">
-            <div class="bubble-number" id="stat-local-groups" data-target="84" data-suffix="">84</div>
-            <div class="bubble-label">Local BEST<br>Groups</div>
+          <div class="stats-bar-item fade-up delay-2">
+            <div class="stat-number" id="stat-countries" data-target="30" data-suffix="">30</div>
+            <div class="stat-label">Countries</div>
           </div>
-
-          <div class="bubble bubble-stat bubble-b bubble-pulse fade-up delay-2">
-            <div class="bubble-number" id="stat-countries" data-target="30" data-suffix="">30</div>
-            <div class="bubble-label">Countries</div>
+          <div class="stats-bar-item fade-up delay-3">
+            <div class="stat-number" id="stat-volunteers" data-target="4000" data-suffix="+">4000+</div>
+            <div class="stat-label">Volunteers</div>
           </div>
-
-          <div class="bubble bubble-stat bubble-c bubble-pulse fade-up delay-3">
-            <div class="bubble-number" id="stat-volunteers" data-target="4000" data-suffix="+">4000+</div>
-            <div class="bubble-label">Volunteers</div>
+          <div class="stats-bar-item fade-up delay-4">
+            <div class="stat-number" id="stat-vienna-members" data-target="40" data-suffix="">~40</div>
+            <div class="stat-label">Members in Vienna</div>
           </div>
-
-          <!-- Decorative dots (foreground z-index 5) — prominent, some overlapping bubbles -->
-          <!-- overlaps top-right edge of bubble-center -->
-          <div class="bubble-dot dot-lg"  style="left:510px; top:18px;  background:var(--navy); opacity:0.22;"></div>
-          <!-- overlaps bottom of bubble-center -->
-          <div class="bubble-dot dot-lg"  style="left:368px; top:318px; background:var(--gray-light); opacity:0.55;"></div>
-          <!-- overlaps bottom-left of bubble-a -->
-          <div class="bubble-dot dot-md"  style="left:48px;  top:328px; background:var(--orange); opacity:0.45;"></div>
-          <!-- overlaps top-right of bubble-b -->
-          <div class="bubble-dot dot-sm"  style="left:245px; top:6px;   background:var(--orange); opacity:0.6;"></div>
-          <!-- overlaps bottom-left of bubble-c -->
-          <div class="bubble-dot dot-md"  style="left:438px; top:218px; background:var(--orange-light); opacity:0.5;"></div>
-          <!-- isolated accent dots -->
-          <div class="bubble-dot dot-sm"  style="left:10px;  top:115px; background:var(--navy); opacity:0.3;"></div>
-          <div class="bubble-dot dot-xs"  style="right:72px; top:28px;  background:var(--orange); opacity:0.55;"></div>
-
         </div>
       </div>
     </section>
@@ -291,31 +251,30 @@
   <div id="footer-placeholder"></div>
   <script src="assets/js/footer.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.7/build/d3.layout.cloud.min.js"></script>
   <script src="assets/js/config.js"></script>
   <script>
-    // Inject BEST_STATS values into prose and bubble counters
+    // Inject BEST_STATS values into prose and stats bar
     document.getElementById('stat-active-members').textContent       = BEST_STATS.activeMembers;
-    document.getElementById('stat-countries-join').textContent       = BEST_STATS.countries;
-    document.getElementById('stat-local-groups-pillar').textContent  = BEST_STATS.localGroups;
-    document.getElementById('stat-countries-pillar').textContent     = BEST_STATS.countries;
+    document.getElementById('stat-countries-join').textContent        = BEST_STATS.countries;
     document.getElementById('stat-active-members-pillar').textContent = BEST_STATS.activeMembers;
 
-    var lgBubble = document.getElementById('stat-local-groups');
-    lgBubble.textContent     = BEST_STATS.localGroups;
-    lgBubble.dataset.target  = BEST_STATS.localGroups;
+    var lgEl = document.getElementById('stat-local-groups');
+    lgEl.textContent    = BEST_STATS.localGroups;
+    lgEl.dataset.target = BEST_STATS.localGroups;
 
-    var cBubble = document.getElementById('stat-countries');
-    cBubble.textContent    = BEST_STATS.countries;
-    cBubble.dataset.target = BEST_STATS.countries;
+    var cEl = document.getElementById('stat-countries');
+    cEl.textContent    = BEST_STATS.countries;
+    cEl.dataset.target = BEST_STATS.countries;
 
-    var vBubble = document.getElementById('stat-volunteers');
-    vBubble.textContent    = BEST_STATS.volunteers + '+';
-    vBubble.dataset.target = BEST_STATS.volunteers;
+    var vEl = document.getElementById('stat-volunteers');
+    vEl.textContent    = BEST_STATS.volunteers + '+';
+    vEl.dataset.target = BEST_STATS.volunteers;
+
+    var vmEl = document.getElementById('stat-vienna-members');
+    vmEl.textContent    = '~' + BEST_STATS.activeMembers;
+    vmEl.dataset.target = BEST_STATS.activeMembers;
   </script>
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/wordcloud.js"></script>
   <script src="assets/js/events.js"></script>
 </body>
 </html>
