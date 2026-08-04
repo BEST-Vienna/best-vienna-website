@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?v=2" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="icon" href="assets/images/logos/best_logomark.png" type="image/png" />
 </head>
 <body>
@@ -56,30 +56,30 @@
             </p>
             <p>
               We are part of a European-wide network — <strong>BEST: Board of European Students of
-              Technology</strong> — spanning <span id="about-stat-groups-text">79</span> Local BEST Groups across <span id="about-stat-countries-text">29</span> countries. In short: a
+              Technology</strong> — spanning <span data-stat="localGroups">79</span> Local BEST Groups across <span data-stat="countries">29</span> countries. In short: a
               non-profit, non-political student organisation working for youth development, connecting
               people from different countries and helping everyone develop an international mindset.
             </p>
             <p>
-              Founded in 1989, BEST has grown into a community of over <span id="about-stat-volunteers-text">3 300</span> volunteers bringing
+              Founded in 1989, BEST has grown into a community of over <span data-stat="volunteers" data-stat-format="locale">3 300</span> volunteers bringing
               students and industry closer together across Europe.
             </p>
 
             <div class="about-stat-row">
               <div class="about-stat">
-                <div class="about-stat-num" id="about-stat-groups">79</div>
+                <div class="about-stat-num" data-stat="localGroups">79</div>
                 <div class="about-stat-label">Local Groups</div>
               </div>
               <div class="about-stat">
-                <div class="about-stat-num" id="about-stat-countries">29</div>
+                <div class="about-stat-num" data-stat="countries">29</div>
                 <div class="about-stat-label">Countries</div>
               </div>
               <div class="about-stat">
-                <div class="about-stat-num" id="about-stat-vol">3 300+</div>
+                <div class="about-stat-num" data-stat="volunteers" data-stat-format="locale" data-stat-suffix="+">3 300+</div>
                 <div class="about-stat-label">Volunteers</div>
               </div>
               <div class="about-stat">
-                <div class="about-stat-num" id="about-stat-members">~40</div>
+                <div class="about-stat-num" data-stat="activeMembers" data-stat-prefix="~">~40</div>
                 <div class="about-stat-label">Members in Vienna</div>
               </div>
             </div>
@@ -175,7 +175,7 @@
           <div class="benefit-card fade-up delay-3">
             <div class="benefit-icon">🌍</div>
             <h4>International Mindset</h4>
-            <p>We all speak English (and German!) and connect you with a network spanning <span id="about-benefit-countries">29</span> European countries.</p>
+            <p>We all speak English (and German!) and connect you with a network spanning <span data-stat="countries">29</span> European countries.</p>
           </div>
 
           <div class="benefit-card fade-up delay-1">
@@ -272,37 +272,31 @@
 
   <script src="assets/js/config.js"></script>
   <script>
-    // Render board title with current term
-    document.getElementById('board-title').textContent =
-      'The ' + BOARD_TERM + ' Board of LBG Vienna';
+    // Board title + member cards from config.js. Stats are bound
+    // declaratively via [data-stat] in main.js.
+    var boardTitle = document.getElementById('board-title');
+    if (boardTitle) {
+      boardTitle.textContent = 'The ' + BOARD_TERM + ' Board of LBG Vienna';
+    }
 
-    // Render member cards
-    var delays = ['delay-1', 'delay-2', 'delay-3'];
     var grid = document.getElementById('board-members-grid');
-    grid.innerHTML = BOARD_MEMBERS.map(function (m, i) {
-      return [
-        '<div class="member-card fade-up ' + delays[i % 3] + '">',
-        '  <div class="member-photo-wrap">',
-        '    <img src="assets/images/board/' + m.photo + '" alt="' + m.name + '" />',
-        '  </div>',
-        '  <h3>' + m.name + '</h3>',
-        '  <div class="member-role">' + m.role + '</div>',
-        '  <div class="member-divider"></div>',
-        '  <p class="member-study">' + m.study + '</p>',
-        '  <a href="mailto:' + m.email + '" class="member-email">' + m.email + '</a>',
-        '</div>',
-      ].join('\n');
-    }).join('\n');
-
-    // Inject BEST_STATS into about page
-    document.getElementById('about-stat-groups').textContent    = BEST_STATS.localGroups;
-    document.getElementById('about-stat-countries').textContent = BEST_STATS.countries;
-    document.getElementById('about-stat-vol').textContent       = BEST_STATS.volunteers.toLocaleString() + '+';
-    document.getElementById('about-stat-members').textContent   = '~' + BEST_STATS.activeMembers;
-    document.getElementById('about-stat-groups-text').textContent    = BEST_STATS.localGroups;
-    document.getElementById('about-stat-countries-text').textContent = BEST_STATS.countries;
-    document.getElementById('about-stat-volunteers-text').textContent = BEST_STATS.volunteers.toLocaleString();
-    document.getElementById('about-benefit-countries').textContent   = BEST_STATS.countries;
+    if (grid) {
+      var delays = ['delay-1', 'delay-2', 'delay-3'];
+      grid.innerHTML = BOARD_MEMBERS.map(function (m, i) {
+        return [
+          '<div class="member-card fade-up ' + delays[i % 3] + '">',
+          '  <div class="member-photo-wrap">',
+          '    <img src="assets/images/board/' + m.photo + '" alt="' + m.name + '" />',
+          '  </div>',
+          '  <h3>' + m.name + '</h3>',
+          '  <div class="member-role">' + m.role + '</div>',
+          '  <div class="member-divider"></div>',
+          '  <p class="member-study">' + m.study + '</p>',
+          '  <a href="mailto:' + m.email + '" class="member-email">' + m.email + '</a>',
+          '</div>',
+        ].join('\n');
+      }).join('\n');
+    }
   </script>
   <script src="assets/js/main.js"></script>
 </body>

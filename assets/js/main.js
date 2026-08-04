@@ -4,6 +4,21 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ---------- Config-driven stat binding ----------
+  // Fills any [data-stat="key"] element from BEST_STATS (config.js).
+  // Optional attrs: data-stat-prefix, data-stat-suffix, data-stat-format="locale".
+  // Guarded so pages that don't load config.js are unaffected.
+  if (typeof BEST_STATS !== 'undefined') {
+    document.querySelectorAll('[data-stat]').forEach(el => {
+      const key = el.dataset.stat;
+      if (!(key in BEST_STATS)) return;
+      const raw = BEST_STATS[key];
+      const value = el.dataset.statFormat === 'locale' ? raw.toLocaleString() : String(raw);
+      el.textContent = (el.dataset.statPrefix || '') + value + (el.dataset.statSuffix || '');
+      if (el.hasAttribute('data-target')) el.dataset.target = raw;
+    });
+  }
+
   // ---------- Hero video placeholder ----------
   const heroVideo       = document.getElementById('heroVideo');
   const heroPlaceholder = document.getElementById('heroPlaceholder');
@@ -96,8 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(step);
   }
 
-});
-
   // ---------- FAQ accordion ----------
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -117,3 +130,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+});

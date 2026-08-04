@@ -332,58 +332,6 @@ p {
   display: flex;
 }
 
-/* ---------- Welcome Section ---------- */
-.welcome-section {
-  background: var(--white);
-}
-
-.welcome-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.welcome-left .logo-mark {
-  width: 72px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.welcome-left h2 {
-  color: var(--navy);
-  margin-bottom: 16px;
-}
-
-.welcome-left p {
-  margin-bottom: 28px;
-  max-width: 500px;
-}
-
-.welcome-btns {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.welcome-right {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--card-shadow);
-}
-
-.welcome-right img {
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.welcome-right:hover img {
-  transform: scale(1.03);
-}
-
 /* ---------- About Pillars ---------- */
 .pillars-section {
   background: var(--off-white);
@@ -498,85 +446,6 @@ p {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
-}
-
-/* ---------- Board Teaser ---------- */
-.board-teaser {
-  position: relative;
-  padding: 80px 0;
-  overflow: hidden;
-}
-
-.board-teaser-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('../images/board_bg.jpg');
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.22);
-}
-
-.board-teaser-inner {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.board-teaser-left h2 {
-  color: var(--white);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  margin-bottom: 12px;
-}
-
-.board-teaser-left .board-subtitle {
-  color: var(--orange);
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.board-teaser-left p {
-  color: rgba(255,255,255,0.65);
-  margin-bottom: 28px;
-}
-
-.board-members-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.board-member-item {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-sm);
-  padding: 14px 18px;
-  transition: var(--transition);
-}
-
-.board-member-item:hover {
-  background: rgba(232, 82, 26, 0.15);
-  border-color: rgba(232, 82, 26, 0.4);
-}
-
-.board-member-item .member-name {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--white);
-}
-
-.board-member-item .member-role {
-  font-size: 0.78rem;
-  color: var(--orange);
-  font-weight: 500;
-  margin-top: 2px;
 }
 
 /* ---------- Contact Section ---------- */
@@ -701,63 +570,6 @@ p {
   display: block;
 }
 
-/* ---------- Footer ---------- */
-.site-footer {
-  background: var(--navy);
-  padding: 36px 0;
-}
-
-.footer-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-}
-
-.footer-socials {
-  display: flex;
-  gap: 14px;
-}
-
-.footer-socials a {
-  width: 40px;
-  height: 40px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-}
-
-.footer-socials a:hover {
-  background: var(--orange);
-  transform: translateY(-3px);
-}
-
-.footer-socials img {
-  width: 18px;
-  height: 18px;
-  filter: brightness(0) invert(1);
-  object-fit: contain;
-}
-
-.footer-copy {
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.4);
-  text-align: center;
-}
-
-.footer-copy a {
-  color: rgba(255,255,255,0.6);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  transition: color var(--transition);
-}
-
-.footer-copy a:hover {
-  color: var(--orange);
-}
 
 /* ============================================
    BOARD PAGE SPECIFIC
@@ -1371,82 +1183,10 @@ a.pillar-card {
 
 .show-more a:hover { color: var(--orange-dark); text-decoration: underline; }
 
-/* ---------- CONTACT (new) ---------- */
-.contact-new {
-  background: var(--off-white);
-}
-
-.contact-new-inner {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto;
-}
-
-.contact-new-inner h2 {
-  color: var(--navy);
-  margin-bottom: 12px;
-}
-
-.contact-new-inner > p {
-  margin-bottom: 28px;
-}
-
-.contact-info-box {
-  text-align: left;
-  margin-bottom: 40px;
-}
-
-.contact-icons-row {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-
-.contact-icon-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  transition: transform var(--transition);
-}
-
-.contact-icon-item:hover {
-  transform: translateY(-4px);
-}
-
-.contact-icon-circle {
-  width: 70px;
-  height: 70px;
-  background: var(--white);
-  border: 2px solid var(--gray-light);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  box-shadow: var(--card-shadow);
-  transition: border-color var(--transition), box-shadow var(--transition);
-}
-
-.contact-icon-item:hover .contact-icon-circle {
-  border-color: var(--orange);
-  box-shadow: 0 8px 24px rgba(232,82,26,0.2);
-}
-
-.contact-icon-item span {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--navy);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-/* ---------- Footer (new 3-col) ---------- */
+/* ---------- Footer ---------- */
 .site-footer {
   background: var(--navy);
+  padding: 36px 0;
 }
 
 .footer-cols {
@@ -2244,5 +1984,83 @@ a.pillar-card {
 
   .faq-content {
     padding: 0 16px 16px;
+  }
+}
+
+/* ============================================
+   MOTIVATION LETTERS PAGE
+   ============================================ */
+.sample-letters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.letter-card {
+  background: white;
+  border: 1px solid var(--light-border);
+  border-radius: 8px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.letter-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.letter-author {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.letter-location {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 16px;
+}
+
+.letter-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: var(--orange);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.letter-btn:hover {
+  background-color: #d6420a;
+}
+
+.author-group {
+  margin-bottom: 40px;
+}
+
+.author-group-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--orange);
+}
+
+.author-letters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .letter-card {
+    background: var(--dark-card-bg, #1a1a1a);
+    border-color: var(--dark-border, #333);
   }
 }
