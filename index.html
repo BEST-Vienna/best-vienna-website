@@ -142,6 +142,20 @@
       </div>
     </section>
 
+    <!-- ===== 5. Word Cloud ===== -->
+    <section class="wordcloud-section section-pad-sm">
+      <div class="container">
+        <div class="wordcloud-menti fade-up">
+          <svg id="wordcloudSvg"></svg>
+          <div class="wordcloud-fallback" aria-hidden="true">
+            BEST · Vienna · Students · Technology · Europe · Community ·
+            Events · Courses · Network · International · Engineering · Exchange ·
+            TU Wien · Career · Volunteer · 30 Countries · 84 LBGs · Non-profit
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== 7. OUR EVENTS ===== -->
     <div class="section-divider container fade-up">
       <span>OUR EVENTS</span>
@@ -288,5 +302,8 @@
   </script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/events.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.7/build/d3.layout.cloud.min.js"></script>
+  <script src="assets/js/wordcloud.js"></script>
 </body>
 </html>
