@@ -234,7 +234,7 @@
 }
 
 .ev-feat-left {
-  max-width: 520px;
+  width: 100%;
 }
 
 .ev-feat-tag {
@@ -261,7 +261,6 @@
   color: rgba(255,255,255,0.68);
   line-height: 1.78;
   margin-bottom: 22px;
-  max-width: 440px;
 }
 
 .ev-feat-facts {
