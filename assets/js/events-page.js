@@ -1,26 +1,49 @@
 /* ============================================
    BEST Vienna — Events Detail Page Render
    Reads from the shared source assets/js/events-data.js
-   (BEST_EVENTS). Full events render as detail sections;
-   entries flagged `comingSoon` render as teaser cards.
+   (BEST_EVENTS). Full events render as detail sections.
+   The "What to expect" (highlights) and "Good to know"
+   (info) blocks are optional per event.
    ============================================ */
 
 (function () {
   "use strict";
 
   const detailsContainer = document.getElementById("eventDetails");
-  const comingSoonGrid = document.getElementById("comingSoonGrid");
 
-  if (!detailsContainer || !comingSoonGrid) return;
+  if (!detailsContainer) return;
 
   const allEvents = Object.entries(BEST_EVENTS);
   const detailEvents = allEvents.filter(function ([, ev]) { return !ev.comingSoon; });
-  const comingSoonEvents = allEvents.filter(function ([, ev]) { return ev.comingSoon; });
 
   detailsContainer.innerHTML = detailEvents
     .map(function ([id, event], index) {
       const tintClass = index % 2 === 1 ? " ev-detail-section--tint" : "";
       const imageOrderClass = index % 2 === 1 ? " image-second" : "";
+
+      const highlightsBlock =
+        Array.isArray(event.highlights) && event.highlights.length
+          ? '<div class="ev-detail-highlights">' +
+            '<h4 style="font-size: 0.9rem; font-weight: 600; margin-bottom: 12px; color: var(--navy);">What to expect</h4>' +
+            "<ul>" +
+            event.highlights.map(function (h) {
+              return "<li>✓ " + h + "</li>";
+            }).join("") +
+            "</ul>" +
+            "</div>"
+          : "";
+
+      const infoBlock =
+        Array.isArray(event.info) && event.info.length
+          ? '<div class="ev-detail-info">' +
+            '<h4 style="font-size: 0.9rem; font-weight: 600; margin-bottom: 12px; color: var(--navy);">Good to know</h4>' +
+            "<dl>" +
+            event.info.map(function (item) {
+              return "<dt>" + item.label + "</dt><dd>" + item.value + "</dd>";
+            }).join("") +
+            "</dl>" +
+            "</div>"
+          : "";
 
       return (
         '<section class="section-pad ev-detail-section' + tintClass + '" id="event-' + id + '">' +
@@ -33,22 +56,8 @@
         '<span class="board-hero-label">' + event.tag + "</span>" +
         "<h2>" + event.name + "</h2>" +
         "<p>" + event.longDesc + "</p>" +
-        '<div class="ev-detail-highlights">' +
-        '<h4 style="font-size: 0.9rem; font-weight: 600; margin-bottom: 12px; color: var(--navy);">What to expect</h4>' +
-        "<ul>" +
-        event.highlights.map(function (h) {
-          return "<li>✓ " + h + "</li>";
-        }).join("") +
-        "</ul>" +
-        "</div>" +
-        '<div class="ev-detail-info">' +
-        '<h4 style="font-size: 0.9rem; font-weight: 600; margin-bottom: 12px; color: var(--navy);">Good to know</h4>' +
-        "<dl>" +
-        event.info.map(function (item) {
-          return "<dt>" + item.label + "</dt><dd>" + item.value + "</dd>";
-        }).join("") +
-        "</dl>" +
-        "</div>" +
+        highlightsBlock +
+        infoBlock +
         '<ul class="ev-detail-facts">' +
         event.facts.map(function (f) {
           return "<li><span aria-hidden=\"true\">" + f.icon + "</span>" + f.text + "</li>";
@@ -59,24 +68,6 @@
         "</div>" +
         "</div>" +
         "</section>"
-      );
-    })
-    .join("");
-
-  comingSoonGrid.innerHTML = comingSoonEvents
-    .map(function ([id, event]) {
-      return (
-        '<div class="ev-coming-card fade-up">' +
-        '<div class="ev-coming-bg">' +
-        '<img src="' + event.image + '" alt="' + event.name + '" />' +
-        "</div>" +
-        '<div class="ev-coming-body">' +
-        '<div class="ev-coming-abbr">' + event.abbr + "</div>" +
-        '<div class="ev-coming-tag">' + event.tag + "</div>" +
-        "<p>" + event.desc + "</p>" +
-        '<a href="' + event.detailCta.href + '" class="btn btn-outline" style="margin-top: 12px;">Follow Updates</a>' +
-        "</div>" +
-        "</div>"
       );
     })
     .join("");
