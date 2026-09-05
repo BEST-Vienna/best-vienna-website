@@ -1,293 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BEST Vienna — Board of European Students of Technology</title>
-  <meta name="description" content="BEST Vienna — Board of European Students of Technology at TU Wien. Connecting students across Europe since 1989." />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>BEST Vienna — Board of European Students of Technology</title>
+    <meta name="description"
+          content="BEST Vienna — Board of European Students of Technology at TU Wien. Connecting students across Europe since 1989."/>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap"
+          rel="stylesheet"/>
 
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="stylesheet" href="assets/css/events.css" />
-  <link rel="icon" href="assets/images/logos/best_logomark.png" type="image/png" />
-  <link rel="preload" as="image" href="assets/images/Website_Header_Loading_Placeholder.png" />
+    <link rel="stylesheet" href="assets/css/styles.css"/>
+    <link rel="stylesheet" href="assets/css/events.css"/>
+    <link rel="icon" href="assets/images/logos/best_logomark.png" type="image/png"/>
+    <link rel="preload" as="image" href="assets/images/Website_Header_Loading_Placeholder.png"/>
 </head>
 <body>
 
-  <!-- ===== Announcement Bar ===== -->
-  <div class="announcement-bar">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q09MJLS86E"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q09MJLS86E');
+</script>
+<!-- ===== Announcement Bar ===== -->
+<div class="announcement-bar">
     FOR QUESTIONS ABOUT BEST COURSES CONTACT US VIA
     <a href="mailto:vienna-bestcourses@best-eu.org">vienna-bestcourses@best-eu.org</a>
-  </div>
+</div>
 
-  <!-- ===== Navbar ===== -->
-  <div id="navbar-placeholder"></div>
-  <script src="assets/js/navbar.js"></script>
+<!-- ===== Navbar ===== -->
+<div id="navbar-placeholder"></div>
+<script src="assets/js/navbar.js"></script>
 
-  <main>
+<main>
 
     <!-- ===== 1. Hero / Video ===== -->
     <section class="hero-video">
-      <video class="hero-video-bg" id="heroVideo" autoplay muted playsinline aria-hidden="true"
-             poster="assets/images/Website_Header_Loading_Placeholder.png">
-        <source src="assets/images/Website_Header_Blue.mp4" type="video/mp4" />
-      </video>
-      <!-- Placeholder shown atomically from preload cache, fades out when video plays -->
-      <div class="hero-placeholder" id="heroPlaceholder" aria-hidden="true"></div>
+        <video class="hero-video-bg" id="heroVideo" autoplay muted playsinline aria-hidden="true"
+               poster="assets/images/Website_Header_Loading_Placeholder.png">
+            <source src="assets/images/Website_Header_Blue.mp4" type="video/mp4"/>
+        </video>
+        <!-- Placeholder shown atomically from preload cache, fades out when video plays -->
+        <div class="hero-placeholder" id="heroPlaceholder" aria-hidden="true"></div>
     </section>
 
     <!-- ===== 2. Become a Member ===== -->
     <section class="join-section section-pad">
-      <div class="container join-inner">
-        <div class="join-image fade-up">
-          <img src="assets/images/sc22_group_lg.jpg" alt="BEST Vienna members" />
+        <div class="container join-inner">
+            <div class="join-image fade-up">
+                <img src="assets/images/sc22_group_lg.jpg" alt="BEST Vienna members"/>
+            </div>
+            <div class="join-content fade-up delay-2">
+                <h2>Become a member!</h2>
+                <p>
+                    Join more than <span data-stat="activeMembers">20</span> active members at TU Wien and be part of a
+                    network spanning
+                    <span data-stat="countries">30</span> European countries. Grow your skills, make lifelong friends,
+                    and help students
+                    discover Europe.
+                </p>
+                <a href="https://forms.gle/giR4ARjsJGW3wWr38" class="btn btn-primary btn-lg">Apply here!</a>
+            </div>
         </div>
-        <div class="join-content fade-up delay-2">
-          <h2>Become a member!</h2>
-          <p>
-            Join more than <span data-stat="activeMembers">20</span> active members at TU Wien and be part of a network spanning
-            <span data-stat="countries">30</span> European countries. Grow your skills, make lifelong friends, and help students
-            discover Europe.
-          </p>
-          <a href="https://forms.gle/giR4ARjsJGW3wWr38" class="btn btn-primary btn-lg">Apply here!</a>
-        </div>
-      </div>
     </section>
 
     <!-- ===== 3. WHAT WE OFFER ===== -->
     <div class="section-divider container fade-up">
-      <span>WHAT WE OFFER</span>
+        <span>WHAT WE OFFER</span>
     </div>
 
     <section class="pillars-section section-pad">
-      <div class="container">
-        <div class="pillars-grid">
-          <a href="about.html" class="pillar-card fade-up delay-1">
-            <img src="assets/images/lga22_group_lg.jpg" alt="Join BEST Vienna" class="pillar-img" />
-            <div class="pillar-body">
-              <div class="pillar-label">For Students</div>
-              <h3>Join BEST Vienna</h3>
-              <p>
-                Become part of a community of <span data-stat="activeMembers">40</span> active members at TU Wien.
-                Organise events, develop skills, and make international friends — all while having fun.
-              </p>
+        <div class="container">
+            <div class="pillars-grid">
+                <a href="about.html" class="pillar-card fade-up delay-1">
+                    <img src="assets/images/lga22_group_lg.jpg" alt="Join BEST Vienna" class="pillar-img"/>
+                    <div class="pillar-body">
+                        <div class="pillar-label">For Students</div>
+                        <h3>Join BEST Vienna</h3>
+                        <p>
+                            Become part of a community of <span data-stat="activeMembers">40</span> active members at TU
+                            Wien.
+                            Organise events, develop skills, and make international friends — all while having fun.
+                        </p>
+                    </div>
+                </a>
+                <a href="https://www.bestvienna.at/news" class="pillar-card fade-up delay-2">
+                    <img src="assets/images/events/BEST_Course.jpg" alt="BEST Courses" class="pillar-img"/>
+                    <div class="pillar-body">
+                        <div class="pillar-label">For TU Wien Students</div>
+                        <h3>BEST Courses</h3>
+                        <p>
+                            Apply for 10-day academic courses hosted across Europe.
+                            Immerse yourself in cutting-edge topics, explore a new country, make international friends.
+                        </p>
+                    </div>
+                </a>
+                <a href="events.html" class="pillar-card fade-up delay-3">
+                    <img src="assets/images/events/beWANTED.jpg" alt="Our Events" class="pillar-img"/>
+                    <div class="pillar-body">
+                        <div class="pillar-label">Explore</div>
+                        <h3>Our Events</h3>
+                        <p>
+                            From internal getaways to career events,
+                            learn more about different events we organize throughout the year.
+                        </p>
+                    </div>
+                </a>
             </div>
-          </a>
-          <a href="https://www.bestvienna.at/news" class="pillar-card fade-up delay-2">
-            <img src="assets/images/events/BEST_Course.jpg" alt="BEST Courses" class="pillar-img" />
-            <div class="pillar-body">
-              <div class="pillar-label">For TU Wien Students</div>
-              <h3>BEST Courses</h3>
-              <p>
-                Apply for 10-day academic courses hosted across Europe.
-                Immerse yourself in cutting-edge topics, explore a new country, make international friends.
-              </p>
-            </div>
-          </a>
-          <a href="events.html" class="pillar-card fade-up delay-3">
-            <img src="assets/images/events/beWANTED.jpg" alt="Our Events" class="pillar-img" />
-            <div class="pillar-body">
-              <div class="pillar-label">Explore</div>
-              <h3>Our Events</h3>
-              <p>
-                From internal getaways to career events,
-                learn more about different events we organize throughout the year.
-              </p>
-            </div>
-          </a>
         </div>
-      </div>
     </section>
 
     <!-- ===== 4. BEST in NUMBERS ===== -->
     <section class="numbers-section">
-      <div class="numbers-inner">
-        <div class="bubble-wrap">
+        <div class="numbers-inner">
+            <div class="bubble-wrap">
 
-          <!-- Background title bubble (lowest z-index) -->
-          <div class="bubble bubble-center">
-            <div class="bubble-center-title">BEST in</div>
-            <div class="bubble-center-bold">NUMBERS</div>
-          </div>
+                <!-- Background title bubble (lowest z-index) -->
+                <div class="bubble bubble-center">
+                    <div class="bubble-center-title">BEST in</div>
+                    <div class="bubble-center-bold">NUMBERS</div>
+                </div>
 
-          <!-- Stat bubbles (on top of background) -->
-          <div class="bubble bubble-stat bubble-a bubble-pulse fade-up delay-1">
-            <div class="bubble-number" data-stat="localGroups">84</div>
-            <div class="bubble-label">Local BEST<br>Groups</div>
-          </div>
+                <!-- Stat bubbles (on top of background) -->
+                <div class="bubble bubble-stat bubble-a bubble-pulse fade-up delay-1">
+                    <div class="bubble-number" data-stat="localGroups">84</div>
+                    <div class="bubble-label">Local BEST<br>Groups</div>
+                </div>
 
-          <div class="bubble bubble-stat bubble-b bubble-pulse fade-up delay-2">
-            <div class="bubble-number" data-stat="countries">30</div>
-            <div class="bubble-label">Countries</div>
-          </div>
+                <div class="bubble bubble-stat bubble-b bubble-pulse fade-up delay-2">
+                    <div class="bubble-number" data-stat="countries">30</div>
+                    <div class="bubble-label">Countries</div>
+                </div>
 
-          <div class="bubble bubble-stat bubble-c bubble-pulse fade-up delay-3">
-            <div class="bubble-number" data-stat="volunteers" data-stat-suffix="+">4000+</div>
-            <div class="bubble-label">Volunteers</div>
-          </div>
+                <div class="bubble bubble-stat bubble-c bubble-pulse fade-up delay-3">
+                    <div class="bubble-number" data-stat="volunteers" data-stat-suffix="+">4000+</div>
+                    <div class="bubble-label">Volunteers</div>
+                </div>
 
-          <!-- Decorative dots -->
-          <div class="bubble-dot dot-lg"  style="left:510px; top:18px;  background:var(--navy); opacity:0.22;"></div>
-          <div class="bubble-dot dot-lg"  style="left:368px; top:318px; background:var(--gray-light); opacity:0.55;"></div>
-          <div class="bubble-dot dot-md"  style="left:48px;  top:328px; background:var(--orange); opacity:0.45;"></div>
-          <div class="bubble-dot dot-sm"  style="left:245px; top:6px;   background:var(--orange); opacity:0.6;"></div>
-          <div class="bubble-dot dot-md"  style="left:438px; top:218px; background:var(--orange-light); opacity:0.5;"></div>
-          <div class="bubble-dot dot-sm"  style="left:10px;  top:115px; background:var(--navy); opacity:0.3;"></div>
-          <div class="bubble-dot dot-xs"  style="right:72px; top:28px;  background:var(--orange); opacity:0.55;"></div>
+                <!-- Decorative dots -->
+                <div class="bubble-dot dot-lg"
+                     style="left:510px; top:18px;  background:var(--navy); opacity:0.22;"></div>
+                <div class="bubble-dot dot-lg"
+                     style="left:368px; top:318px; background:var(--gray-light); opacity:0.55;"></div>
+                <div class="bubble-dot dot-md"
+                     style="left:48px;  top:328px; background:var(--orange); opacity:0.45;"></div>
+                <div class="bubble-dot dot-sm"
+                     style="left:245px; top:6px;   background:var(--orange); opacity:0.6;"></div>
+                <div class="bubble-dot dot-md"
+                     style="left:438px; top:218px; background:var(--orange-light); opacity:0.5;"></div>
+                <div class="bubble-dot dot-sm"
+                     style="left:10px;  top:115px; background:var(--navy); opacity:0.3;"></div>
+                <div class="bubble-dot dot-xs"
+                     style="right:72px; top:28px;  background:var(--orange); opacity:0.55;"></div>
 
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- ===== 5. Word Cloud ===== -->
     <section class="wordcloud-section section-pad-sm">
-      <div class="container">
-        <div class="wordcloud-menti fade-up">
-          <svg id="wordcloudSvg"></svg>
-          <div class="wordcloud-fallback" aria-hidden="true">
-            BEST · Vienna · Students · Technology · Europe · Community ·
-            Events · Courses · Network · International · Engineering · Exchange ·
-            TU Wien · Career · Volunteer · 30 Countries · 84 LBGs · Non-profit
-          </div>
+        <div class="container">
+            <div class="wordcloud-menti fade-up">
+                <svg id="wordcloudSvg"></svg>
+                <div class="wordcloud-fallback" aria-hidden="true">
+                    BEST · Vienna · Students · Technology · Europe · Community ·
+                    Events · Courses · Network · International · Engineering · Exchange ·
+                    TU Wien · Career · Volunteer · 30 Countries · 84 LBGs · Non-profit
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- ===== 7. OUR EVENTS ===== -->
     <div class="section-divider container fade-up">
-      <span>OUR EVENTS</span>
+        <span>OUR EVENTS</span>
     </div>
 
     <section class="ev-selector ev-selector--light" id="events">
-      <div class="ev-hint fade-up" aria-live="polite" id="evHint">— Select an event to explore —</div>
+        <div class="ev-hint fade-up" aria-live="polite" id="evHint">— Select an event to explore —</div>
 
-      <div class="ev-stage" id="evStage">
+        <div class="ev-stage" id="evStage">
 
-        <!-- Featured panel (expands on selection) -->
-        <div class="ev-featured" id="evFeatured" aria-label="Event detail" role="region">
-          <div class="ev-feat-bg" id="evFeatBg" aria-hidden="true"></div>
-          <div class="ev-feat-overlay" aria-hidden="true"></div>
-          <div class="ev-feat-content">
-            <div class="ev-feat-image" id="evFeatImage" aria-hidden="true">
-              <img id="evFeatImg" alt="" src="">
+            <!-- Featured panel (expands on selection) -->
+            <div class="ev-featured" id="evFeatured" aria-label="Event detail" role="region">
+                <div class="ev-feat-bg" id="evFeatBg" aria-hidden="true"></div>
+                <div class="ev-feat-overlay" aria-hidden="true"></div>
+                <div class="ev-feat-content">
+                    <div class="ev-feat-image" id="evFeatImage" aria-hidden="true">
+                        <img id="evFeatImg" alt="" src="">
+                    </div>
+                    <div class="ev-feat-left">
+                        <span class="ev-feat-tag" id="evFeatTag"></span>
+                        <h2 class="ev-feat-title" id="evFeatTitle"></h2>
+                        <p class="ev-feat-desc" id="evFeatDesc"></p>
+                        <ul class="ev-feat-facts" id="evFeatFacts" aria-label="Key facts"></ul>
+                        <a class="btn btn-primary ev-feat-cta" id="evFeatCta" href="#">—</a>
+                    </div>
+                </div>
+                <div class="ev-feat-deco" id="evFeatDeco" aria-hidden="true"></div>
+                <button class="ev-feat-close" id="evFeatClose" aria-label="Close event detail">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                         stroke-linecap="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
             </div>
-            <div class="ev-feat-left">
-              <span class="ev-feat-tag" id="evFeatTag"></span>
-              <h2 class="ev-feat-title" id="evFeatTitle"></h2>
-              <p class="ev-feat-desc" id="evFeatDesc"></p>
-              <ul class="ev-feat-facts" id="evFeatFacts" aria-label="Key facts"></ul>
-              <a class="btn btn-primary ev-feat-cta" id="evFeatCta" href="#">—</a>
-            </div>
-          </div>
-          <div class="ev-feat-deco" id="evFeatDeco" aria-hidden="true"></div>
-          <button class="ev-feat-close" id="evFeatClose" aria-label="Close event detail">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          </button>
-        </div>
 
-        <!-- Cards grid — populated by home-events.js -->
-        <div class="ev-cards" id="evCards" role="list" aria-label="Events"></div><!-- /ev-cards -->
-      </div><!-- /ev-stage -->
+            <!-- Cards grid — populated by home-events.js -->
+            <div class="ev-cards" id="evCards" role="list" aria-label="Events"></div><!-- /ev-cards -->
+        </div><!-- /ev-stage -->
 
-      <!-- Dots indicator — populated by home-events.js -->
-      <div class="ev-dots" id="evDots" role="tablist" aria-label="Event navigation"></div>
+        <!-- Dots indicator — populated by home-events.js -->
+        <div class="ev-dots" id="evDots" role="tablist" aria-label="Event navigation"></div>
 
     </section>
 
     <!-- ===== 8. CONTACT ===== -->
     <div class="section-divider container fade-up">
-      <span>CONTACT</span>
+        <span>CONTACT</span>
     </div>
 
     <section id="contact" class="contact-section section-pad">
-      <div class="container contact-inner">
-        <div class="contact-left fade-up">
-          <h2 class="section-title">Stay in touch!</h2>
-          <p>
-            Are you a student who wants to join our organization? A company that would like to work with us?
-            Or just a person with important questions?
-          </p>
-          <p>
-            You can find our office in the main building of the TU Wien:
-          </p>
+        <div class="container contact-inner">
+            <div class="contact-left fade-up">
+                <h2 class="section-title">Stay in touch!</h2>
+                <p>
+                    Are you a student who wants to join our organization? A company that would like to work with us?
+                    Or just a person with important questions?
+                </p>
+                <p>
+                    You can find our office in the main building of the TU Wien:
+                </p>
 
-          <div class="highlight-box">
-            <p>
-              <strong>
-                <a href="https://tuw-maps.tuwien.ac.at/?q=ACEG38" target="_blank" rel="noopener" style="color: var(--orange);">
-                  HTU, Karlsplatz 13, Hof 1, Stiege 4, ground floor, 1040 Vienna
-                </a>
-              </strong>
-            </p>
-            <p style="margin-top: 8px; font-size: 0.88rem;">
-              Office hours: every <strong>Wednesday 18:00–18:30</strong><br />
-              Weekly meetings at <strong>18:30</strong> — you are very welcome to join!
-            </p>
-            <p style="margin-top: 8px; font-size: 0.82rem; color: var(--gray);">
-              Note: No office hours or meetings during vacation or when the university is closed.
-            </p>
-          </div>
+                <div class="highlight-box">
+                    <p>
+                        <strong>
+                            <a href="https://tuw-maps.tuwien.ac.at/?q=ACEG38" target="_blank" rel="noopener"
+                               style="color: var(--orange);">
+                                HTU, Karlsplatz 13, Hof 1, Stiege 4, ground floor, 1040 Vienna
+                            </a>
+                        </strong>
+                    </p>
+                    <p style="margin-top: 8px; font-size: 0.88rem;">
+                        Office hours: every <strong>Wednesday 18:00–18:30</strong><br/>
+                        Weekly meetings at <strong>18:30</strong> — you are very welcome to join!
+                    </p>
+                    <p style="margin-top: 8px; font-size: 0.82rem; color: var(--gray);">
+                        Note: No office hours or meetings during vacation or when the university is closed.
+                    </p>
+                </div>
 
-          <div class="contact-links">
-            <a href="mailto:vienna@best-eu.org" class="contact-link-item featured">
-              <div class="icon"><img src="assets/images/envelope-fill.svg" alt="" class="contact-icon"></div>
-              <div>
-                <div class="link-text">vienna@best-eu.org</div>
-                <div class="link-label">General contact</div>
-              </div>
-            </a>
-            <a href="https://www.instagram.com/bestvienna" target="_blank" rel="noopener" class="contact-link-item featured">
-              <div class="icon"><img src="assets/images/logos/instagram.svg" alt="" class="contact-icon"></div>
-              <div>
-                <div class="link-text">instagram.com/bestvienna</div>
-                <div class="link-label">Follow us on Instagram</div>
-              </div>
-            </a>
-            <a href="https://www.tiktok.com/@best_vienna" target="_blank" rel="noopener" class="contact-link-item featured">
-              <div class="icon"><img src="assets/images/logos/tiktok.svg" alt="" class="contact-icon"></div>
-              <div>
-                <div class="link-text">tiktok.com/@best_vienna</div>
-                <div class="link-label">Follow us on TikTok</div>
-              </div>
-            </a>
-            <a href="https://www.linkedin.com/company/best-vienna/" target="_blank" rel="noopener" class="contact-link-item featured">
-              <div class="icon"><img src="assets/images/logos/linkedin.svg" alt="" class="contact-icon"></div>
-              <div>
-                <div class="link-text">linkedin.com/company/best-vienna</div>
-                <div class="link-label">Connect on LinkedIn</div>
-              </div>
-            </a>
-          </div>
+                <div class="contact-links">
+                    <a href="mailto:vienna@best-eu.org" class="contact-link-item featured">
+                        <div class="icon"><img src="assets/images/envelope-fill.svg" alt="" class="contact-icon"></div>
+                        <div>
+                            <div class="link-text">vienna@best-eu.org</div>
+                            <div class="link-label">General contact</div>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/bestvienna" target="_blank" rel="noopener"
+                       class="contact-link-item featured">
+                        <div class="icon"><img src="assets/images/logos/instagram.svg" alt="" class="contact-icon">
+                        </div>
+                        <div>
+                            <div class="link-text">instagram.com/bestvienna</div>
+                            <div class="link-label">Follow us on Instagram</div>
+                        </div>
+                    </a>
+                    <a href="https://www.tiktok.com/@best_vienna" target="_blank" rel="noopener"
+                       class="contact-link-item featured">
+                        <div class="icon"><img src="assets/images/logos/tiktok.svg" alt="" class="contact-icon"></div>
+                        <div>
+                            <div class="link-text">tiktok.com/@best_vienna</div>
+                            <div class="link-label">Follow us on TikTok</div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/company/best-vienna/" target="_blank" rel="noopener"
+                       class="contact-link-item featured">
+                        <div class="icon"><img src="assets/images/logos/linkedin.svg" alt="" class="contact-icon"></div>
+                        <div>
+                            <div class="link-text">linkedin.com/company/best-vienna</div>
+                            <div class="link-label">Connect on LinkedIn</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-right fade-up delay-2">
+                <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.3823640398326!2d16.367537415579567!3d48.19931557922704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd3e3b63bd34c22e1!2sBoard%20of%20European%20Students%20of%20Technology%20Vienna!5e0!3m2!1sen!2sat!4v1617900000000!5m2!1sen!2sat"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="BEST Vienna location on Google Maps">
+                </iframe>
+            </div>
         </div>
-
-        <div class="contact-right fade-up delay-2">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.3823640398326!2d16.367537415579567!3d48.19931557922704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd3e3b63bd34c22e1!2sBoard%20of%20European%20Students%20of%20Technology%20Vienna!5e0!3m2!1sen!2sat!4v1617900000000!5m2!1sen!2sat"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="BEST Vienna location on Google Maps">
-          </iframe>
-        </div>
-      </div>
     </section>
 
-  </main>
+</main>
 
-  <!-- ===== Footer ===== -->
-  <div id="footer-placeholder"></div>
-  <script src="assets/js/footer.js"></script>
+<!-- ===== Footer ===== -->
+<div id="footer-placeholder"></div>
+<script src="assets/js/footer.js"></script>
 
-  <script src="assets/js/config.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/events-data.js"></script>
-  <script src="assets/js/home-events.js"></script>
-  <!-- Word-cloud: heavy third-party libs, deferred so they never block render. Order preserved by defer. -->
-  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.7/build/d3.layout.cloud.min.js"></script>
-  <script defer src="assets/js/wordcloud.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/events-data.js"></script>
+<script src="assets/js/home-events.js"></script>
+<!-- Word-cloud: heavy third-party libs, deferred so they never block render. Order preserved by defer. -->
+<script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.7/build/d3.layout.cloud.min.js"></script>
+<script defer src="assets/js/wordcloud.js"></script>
 </body>
 </html>
