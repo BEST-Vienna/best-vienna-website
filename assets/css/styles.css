@@ -1998,6 +1998,15 @@ a.pillar-card {
   .faq-content {
     padding: 0 16px 16px;
   }
+
+  .section-divider span {
+    font-size: clamp(1.15rem, 4.5vw, 1.8rem);
+    letter-spacing: 0.03em;
+    padding: 0 14px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
+  }
 }
 
 /* ============================================
