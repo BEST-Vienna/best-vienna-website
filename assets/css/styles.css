@@ -2032,14 +2032,14 @@ a.pillar-card {
 
 .letter-location {
   font-size: 0.9rem;
-  color: var(--gray);
+  color: var(--navy-mid);
   margin-bottom: 16px;
 }
 
 .letter-btn {
   display: inline-block;
   padding: 10px 16px;
-  background-color: var(--orange);
+  background-color: var(--orange-dark);
   color: white;
   text-decoration: none;
   border-radius: 6px;
@@ -2049,7 +2049,7 @@ a.pillar-card {
 }
 
 .letter-btn:hover {
-  background-color: #d6420a;
+  background-color: #96401a;
 }
 
 .author-group {
@@ -2069,11 +2069,4 @@ a.pillar-card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
-}
-
-@media (prefers-color-scheme: dark) {
-  .letter-card {
-    background: var(--dark-card-bg, #1a1a1a);
-    border-color: var(--dark-border, #333);
-  }
 }
