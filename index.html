@@ -15,23 +15,13 @@
     <link rel="stylesheet" href="assets/css/styles.css"/>
     <link rel="stylesheet" href="assets/css/events.css"/>
     <link rel="icon" href="assets/images/logos/best_logomark.png" type="image/png"/>
-    <link rel="preload" as="image" href="assets/images/Website_Header_Loading_Placeholder.png"/>
+    <link rel="preload" as="image" href="assets/images/Website_Header_Loading_Placeholder.jpg"/>
 </head>
 <body>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q09MJLS86E"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
+<!-- Google Analytics is only loaded after cookie consent is granted, see cookie-consent.js -->
+<script src="assets/js/cookie-consent.js"></script>
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-Q09MJLS86E');
-</script>
 <!-- ===== Announcement Bar ===== -->
 <div class="announcement-bar">
     FOR QUESTIONS ABOUT BEST COURSES CONTACT US VIA
@@ -47,7 +37,7 @@
     <!-- ===== 1. Hero / Video ===== -->
     <section class="hero-video">
         <video class="hero-video-bg" id="heroVideo" autoplay muted playsinline aria-hidden="true"
-               poster="assets/images/Website_Header_Loading_Placeholder.png">
+               poster="assets/images/Website_Header_Loading_Placeholder.jpg">
             <source src="assets/images/Website_Header_Blue.mp4" type="video/mp4"/>
         </video>
         <!-- Placeholder shown atomically from preload cache, fades out when video plays -->
@@ -58,7 +48,7 @@
     <section class="join-section section-pad">
         <div class="container join-inner">
             <div class="join-image fade-up">
-                <img src="assets/images/sc22_group_lg.jpg" alt="BEST Vienna members"/>
+                <img src="assets/images/sc22_group_lg.jpg" alt="BEST Vienna members" loading="lazy"/>
             </div>
             <div class="join-content fade-up delay-2">
                 <h2>Become a member!</h2>
@@ -83,7 +73,7 @@
         <div class="container">
             <div class="pillars-grid">
                 <a href="about.html" class="pillar-card fade-up delay-1">
-                    <img src="assets/images/lga22_group_lg.jpg" alt="Join BEST Vienna" class="pillar-img"/>
+                    <img src="assets/images/lga22_group_lg.jpg" alt="Join BEST Vienna" class="pillar-img" loading="lazy"/>
                     <div class="pillar-body">
                         <div class="pillar-label">For Students</div>
                         <h3>Join BEST Vienna</h3>
@@ -95,7 +85,7 @@
                     </div>
                 </a>
                 <a href="https://www.bestvienna.at/news" class="pillar-card fade-up delay-2">
-                    <img src="assets/images/events/BEST_Course.jpg" alt="BEST Courses" class="pillar-img"/>
+                    <img src="assets/images/events/BEST_Course.jpg" alt="BEST Courses" class="pillar-img" loading="lazy"/>
                     <div class="pillar-body">
                         <div class="pillar-label">For TU Wien Students</div>
                         <h3>BEST Courses</h3>
@@ -106,7 +96,7 @@
                     </div>
                 </a>
                 <a href="events.html" class="pillar-card fade-up delay-3">
-                    <img src="assets/images/events/beWANTED.jpg" alt="Our Events" class="pillar-img"/>
+                    <img src="assets/images/events/beWANTED.jpg" alt="Our Events" class="pillar-img" loading="lazy"/>
                     <div class="pillar-body">
                         <div class="pillar-label">Explore</div>
                         <h3>Our Events</h3>

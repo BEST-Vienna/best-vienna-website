@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="footer-bar">
-      <p>© 2026 BEST Vienna | All Rights Reserved | <a href="https://www.bestvienna.at/impressum">Impressum</a></p>
+      <p>© 2026 BEST Vienna | All Rights Reserved | <a href="https://www.bestvienna.at/impressum">Impressum</a> | <a href="privacy.html">Privacy Policy</a> | <a href="#" id="cookie-settings-link">Cookie Settings</a></p>
     </div>
   </footer>`;
 

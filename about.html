@@ -17,6 +17,9 @@
 </head>
 <body>
 
+<!-- Google Analytics is only loaded after cookie consent is granted, see cookie-consent.js -->
+<script src="assets/js/cookie-consent.js"></script>
+
 <!-- ===== Announcement Bar ===== -->
 <div class="announcement-bar">
     FOR QUESTIONS ABOUT BEST COURSES CONTACT US VIA
@@ -47,7 +50,7 @@
             <div class="about-split">
 
                 <div class="about-split-img fade-up">
-                    <img src="assets/images/lga22_group_lg.jpg" alt="BEST Vienna members at an event"/>
+                    <img src="assets/images/lga22_group_lg.jpg" alt="BEST Vienna members at an event" loading="lazy"/>
                 </div>
 
                 <div class="about-split-text fade-up delay-2">
@@ -219,7 +222,7 @@
             return [
                 '<div class="member-card fade-up ' + delays[i % 3] + '">',
                 '  <div class="member-photo-wrap">',
-                '    <img src="assets/images/board/' + m.photo + '" alt="' + m.name + '" />',
+                '    <img src="assets/images/board/' + m.photo + '" alt="' + m.name + '" loading="lazy" />',
                 '  </div>',
                 '  <h3>' + m.name + '</h3>',
                 '  <div class="member-role">' + m.role + '</div>',

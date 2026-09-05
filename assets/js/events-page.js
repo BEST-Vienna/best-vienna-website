@@ -50,7 +50,7 @@
         '<div class="container">' +
         '<div class="about-split' + imageOrderClass + '">' +
         '<div class="about-split-img fade-up">' +
-        '<img src="' + event.image + '" alt="' + event.name + '" />' +
+        '<img src="' + event.image + '" alt="' + event.name + '" loading="lazy" />' +
         "</div>" +
         '<div class="about-split-text fade-up delay-2">' +
         '<span class="board-hero-label">' + event.tag + "</span>" +
