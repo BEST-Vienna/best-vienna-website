@@ -4,7 +4,7 @@
     <div class="container footer-cols">
       <div class="footer-col">
         <img src="assets/images/logos/best_logomark.png" alt="BEST Vienna" class="footer-logo" />
-        <p class="footer-tagline">Board of European Students of Technology — Vienna Local Group since 1989.</p>
+        <p class="footer-tagline">Board of European Students of Technology — Vienna Local Group since 2002.</p>
       </div>
       <div class="footer-col">
         <h4 class="footer-col-title">Pages</h4>

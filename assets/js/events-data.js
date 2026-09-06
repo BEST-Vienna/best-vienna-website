@@ -38,7 +38,7 @@ const BEST_EVENTS = {
       { label: 'Cost', value: 'under 100€' },
       { label: 'Who can apply', value: 'All TU Wien students (BSc, MSc, any field)' },
       { label: 'Language', value: 'English' },
-      { label: 'Application', value: "Apply via email; deadlines vary by course. Contact us for this year's timeline."},
+      { label: 'Application', value: "Visit the course tab to find out how you can apply"},
     ],
     homeCta:   { text: 'Apply Now', href: 'mailto:vienna-bestcourses@best-eu.org' },
     detailCta: { text: 'Learn More & Apply', href: 'mailto:vienna-bestcourses@best-eu.org' },
