@@ -12,7 +12,7 @@
         <a href="courses.html" data-page="courses">COURSES</a>
         <a href="about.html" data-page="about">ABOUT US</a>
         <a href="faq.html" data-page="faq">FAQ</a>
-        <a href="https://forms.gle/giR4ARjsJGW3wWr38" class="nav-apply-btn">APPLY!</a>
+        <a href="https://forms.gle/X1QXGorJ41wWyBX18" class="nav-apply-btn">APPLY!</a>
       </nav>
 
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -27,7 +27,7 @@
         <a href="courses.html">COURSES</a>
         <a href="about.html">ABOUT US</a>
         <a href="faq.html">FAQ</a>
-        <a href="https://forms.gle/giR4ARjsJGW3wWr38">APPLY!</a>
+        <a href="https://forms.gle/X1QXGorJ41wWyBX18">APPLY!</a>
         <a href="#contact">CONTACT</a>
       </nav>
     </div>
