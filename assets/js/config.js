@@ -5,7 +5,7 @@
    ============================================ */
 
 /* ---------- Board term ---------- */
-const BOARD_TERM = 'XXIII';
+const BOARD_TERM = 'XXV';
 
 /* ---------- Board members ---------- */
 const BOARD_MEMBERS = [
