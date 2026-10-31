@@ -5,51 +5,51 @@
    ============================================ */
 
 /* ---------- Board term ---------- */
-const BOARD_TERM = 'XXII';
+const BOARD_TERM = 'XXIII';
 
 /* ---------- Board members ---------- */
 const BOARD_MEMBERS = [
   {
-    name:  'Mateo Mena Herrera',
+    name:  'Eszter Anna Torgyik',
     role:  'President',
-    study: 'Technical Physics',
-    email: 'mateo.mena.herrera@best-eu.org',
-    photo: 'mateo.jpg',
-  },
-  {
-    name:  'Teodora Lulciuc',
-    role:  'Secretary',
-    study: 'Architecture',
-    email: 'teodora.lulciuc@best-eu.org',
-    photo: 'teodora.jpg',
-  },
-  {
-    name:  'Tobias Reicherzer',
-    role:  'Treasurer',
-    study: 'Informatics',
-    email: 'tobias.reicherzer@best-eu.org',
-    photo: 'tobias.jpg',
-  },
-  {
-    name:  'Eszter Anna Torgyk',
-    role:  'Vice President for Public Relations',
     study: 'Architecture',
     email: 'eszter.anna.torgyik@best-eu.org',
     photo: 'eszter.jpg',
   },
   {
-    name:  'Patrick Wunetich',
-    role:  'Vice President for Corporate Relations',
+    name:  'Emanuel Klatzer',
+    role:  'Secretary',
     study: 'Informatics',
-    email: 'patrick.wunetich@best-eu.org',
-    photo: 'patrick.jpg',
+    email: 'emanuel.klatzer@best-eu.org',
+    photo: 'emanuel.jpg',
   },
   {
-    name:  'Iulian-Ilie Apostol',
+    name:  'Yoana Stefanova',
+    role:  'Treasurer',
+    study: 'Business Informatics',
+    email: 'yoana.stefanova@best-eu.org',
+    photo: 'yoana.jpg',
+  },
+  {
+    name:  'Lilly Görlitz',
+    role:  'Vice President for Public Relations',
+    study: 'Technical Physics',
+    email: 'lilly.görlitz@best-eu.org',
+    photo: 'lilly.jpg',
+  },
+  {
+    name:  'Sebastian Maur',
+    role:  'Vice President for Corporate Relations',
+    study: 'Informatics',
+    email: 'sebastian.maur@best-eu.org',
+    photo: 'sebastian.jpg',
+  },
+  {
+    name:  'Moritz Laichner',
     role:  'Vice President for Human Resources',
-    study: 'Geodesie',
-    email: 'iulian-ilie.apostol@best-eu.org',
-    photo: 'iulian.jpg',
+    study: 'Informatics',
+    email: 'moritz.laichner@best-eu.org',
+    photo: 'moritz.jpg',
   },
 ];
 
